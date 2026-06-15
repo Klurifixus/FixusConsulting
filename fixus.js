@@ -206,8 +206,9 @@
   var carousel = document.querySelector('.carousel');
   if(carousel){
     var ctrack = carousel.querySelector('.carousel-track');
-    var cPrev = carousel.querySelector('.cbtn.prev');
-    var cNext = carousel.querySelector('.cbtn.next');
+    var cScope = carousel.closest('section') || document;   // buttons live in .roller-head, a sibling of .carousel
+    var cPrev = cScope.querySelector('.cbtn.prev');
+    var cNext = cScope.querySelector('.cbtn.next');
     function cUpdate(){
       var max = ctrack.scrollWidth - ctrack.clientWidth - 1;
       var x = ctrack.scrollLeft;
