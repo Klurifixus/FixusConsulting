@@ -113,19 +113,25 @@
   }
 
   if(steps.length){
+    var current = 0, hovering = false;
     setActive(0);
     if('IntersectionObserver' in window){
-      var current = 0;
       var so = new IntersectionObserver(function(entries){
         entries.forEach(function(e){
           if(e.isIntersecting){
             var i = steps.indexOf(e.target);
-            if(i>-1){ current=i; setActive(i); }
+            if(i>-1){ current=i; if(!hovering) setActive(i); }
           }
         });
       }, {threshold:0.55, rootMargin:'-20% 0px -30% 0px'});
       steps.forEach(function(s){ so.observe(s); });
     }
+    // hover-scrub: the aside (number/label/track) follows the pointer, then
+    // snaps back to the scroll-driven step when the pointer leaves
+    steps.forEach(function(s, i){
+      s.addEventListener('mouseenter', function(){ hovering = true; setActive(i); });
+      s.addEventListener('mouseleave', function(){ hovering = false; setActive(current); });
+    });
   }
 
   /* --- subtle portrait parallax (hero) --- */

@@ -191,6 +191,11 @@ section{position:relative}
 .pstep::before{content:"";position:absolute;left:0;top:24px;bottom:24px;width:3px;border-radius:3px;background:var(--line);transition:background .4s}
 .pstep.on{opacity:1;transform:none;box-shadow:0 24px 50px -34px rgba(21,40,30,.45)}
 .pstep.on::before{background:var(--green)}
+/* hover: scrub the model by pointing — snappier than the scroll reveal */
+.pstep{cursor:pointer}
+.pstep:hover{opacity:1;transform:translateY(-3px);box-shadow:0 30px 58px -32px rgba(21,40,30,.5);border-color:transparent;
+  transition:opacity .35s var(--ease),transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.pstep:hover::before{background:var(--green)}
 .pstep .ps-h{display:flex;align-items:baseline;gap:14px}
 .pstep .ps-n{font-family:var(--serif);font-style:italic;color:var(--brass);font-size:17px}
 .pstep h3{font-family:var(--serif);font-weight:500;font-size:24px;margin:0;letter-spacing:-.01em}
