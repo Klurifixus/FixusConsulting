@@ -10,3 +10,6 @@ Thumbs.db
 
 # Node (only if tooling is added later)
 node_modules/
+
+# Original full-size source photos (web versions live in assets/yrken/)
+_src-images/

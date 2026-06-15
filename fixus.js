@@ -202,6 +202,41 @@
     menu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMenu); });
   }
 
+  /* --- yrkeskarusell (arrows + drag + native swipe) --- */
+  var carousel = document.querySelector('.carousel');
+  if(carousel){
+    var ctrack = carousel.querySelector('.carousel-track');
+    var cPrev = carousel.querySelector('.cbtn.prev');
+    var cNext = carousel.querySelector('.cbtn.next');
+    function cUpdate(){
+      var max = ctrack.scrollWidth - ctrack.clientWidth - 1;
+      var x = ctrack.scrollLeft;
+      if(cPrev) cPrev.disabled = x <= 0;
+      if(cNext) cNext.disabled = x >= max;
+      carousel.classList.toggle('at-start', x <= 0);
+      carousel.classList.toggle('at-end', x >= max);
+    }
+    function page(dir){ ctrack.scrollBy({ left: dir * ctrack.clientWidth * 0.85, behavior: 'smooth' }); }
+    if(cPrev) cPrev.addEventListener('click', function(){ page(-1); });
+    if(cNext) cNext.addEventListener('click', function(){ page(1); });
+    var cQ=false;
+    ctrack.addEventListener('scroll', function(){ if(cQ) return; cQ=true; requestAnimationFrame(function(){ cUpdate(); cQ=false; }); }, {passive:true});
+    window.addEventListener('resize', cUpdate, {passive:true});
+    cUpdate();
+    // drag-to-scroll with a mouse (touch uses native scrolling)
+    var cDown=false, cStartX=0, cStartL=0;
+    ctrack.addEventListener('pointerdown', function(e){
+      if(e.pointerType === 'touch') return;
+      cDown=true; cStartX=e.clientX; cStartL=ctrack.scrollLeft;
+      ctrack.style.cursor='grabbing';
+      try{ ctrack.setPointerCapture(e.pointerId); }catch(_){}
+    });
+    ctrack.addEventListener('pointermove', function(e){ if(!cDown) return; ctrack.scrollLeft = cStartL - (e.clientX - cStartX); });
+    function cEnd(){ if(!cDown) return; cDown=false; ctrack.style.cursor=''; }
+    ctrack.addEventListener('pointerup', cEnd);
+    ctrack.addEventListener('pointercancel', cEnd);
+  }
+
   /* --- year --- */
   var yr = document.getElementById('yr');
   if(yr) yr.textContent = new Date().getFullYear();

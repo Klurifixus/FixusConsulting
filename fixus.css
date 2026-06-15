@@ -394,6 +394,34 @@ section{position:relative}
 .faq-a{padding:0 28px 26px;color:var(--muted);font-size:16.5px;line-height:1.62;max-width:68ch}
 .faq-a strong{color:var(--ink);font-weight:600}
 
+/* ---------- yrkeskarusell ---------- */
+.roller-head{display:flex;justify-content:space-between;align-items:flex-end;gap:28px;flex-wrap:wrap}
+.carousel{position:relative;margin-top:38px}
+.carousel-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:6px 2px 18px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+.carousel-track::-webkit-scrollbar{display:none}
+.yk-card{position:relative;flex:0 0 auto;width:clamp(208px,24vw,256px);aspect-ratio:4/5;margin:0;border-radius:20px;
+  overflow:hidden;scroll-snap-align:start;background:var(--graphite);box-shadow:0 18px 40px -26px rgba(21,40,30,.4);
+  cursor:grab;transition:transform .4s var(--ease),box-shadow .4s}
+.yk-card:hover{transform:translateY(-5px);box-shadow:0 30px 56px -28px rgba(21,40,30,.5)}
+.yk-card img{width:100%;height:100%;object-fit:cover;object-position:50% 32%;display:block;filter:saturate(1.02) contrast(1.02)}
+.yk-card::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(13,26,21,.88))}
+.yk-cap{position:absolute;left:16px;right:16px;bottom:15px;z-index:2;margin:0}
+.yk-cap .k{display:block;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);margin-bottom:6px}
+.yk-cap .t{display:block;font-family:var(--serif);font-weight:500;font-size:19px;color:#fff;line-height:1.1;letter-spacing:-.01em}
+.carousel-nav{display:flex;gap:10px;flex:0 0 auto}
+.cbtn{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--line);background:#fff;color:var(--green);
+  display:grid;place-items:center;cursor:pointer;
+  transition:transform .25s var(--ease),background .25s,color .25s,border-color .25s,opacity .25s}
+.cbtn:hover{background:var(--green);color:#fff;border-color:var(--green);transform:translateY(-2px)}
+.cbtn:disabled{opacity:.3;cursor:default;transform:none}
+.cbtn svg{width:20px;height:20px}
+.carousel::before,.carousel::after{content:"";position:absolute;top:6px;bottom:24px;width:52px;z-index:3;pointer-events:none;transition:opacity .3s}
+.carousel::before{left:0;background:linear-gradient(90deg,var(--paper),transparent)}
+.carousel::after{right:0;background:linear-gradient(270deg,var(--paper),transparent)}
+.carousel.at-start::before{opacity:0}
+.carousel.at-end::after{opacity:0}
+
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
   .hero-grid,.value-grid,.role-grid,.process-wrap,.pricing-grid{grid-template-columns:1fr;gap:40px}
