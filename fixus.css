@@ -424,6 +424,30 @@ section{position:relative}
 .carousel.at-start::before{opacity:0}
 .carousel.at-end::after{opacity:0}
 
+/* ---------- vägar in (tjänster) ---------- */
+.ways{display:grid;gap:14px;margin-top:44px}
+.way{display:grid;grid-template-columns:1fr auto;gap:4px 24px;align-items:baseline;color:inherit;
+  background:#fff;border:1px solid var(--line);border-radius:18px;padding:24px 28px;
+  transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.way:hover{transform:translateY(-3px);box-shadow:0 24px 50px -32px rgba(21,40,30,.4);border-color:transparent}
+.way-need{font-family:var(--serif);font-weight:500;font-size:clamp(19px,2.2vw,24px);color:var(--ink);letter-spacing:-.01em;line-height:1.2}
+.way-prod{display:inline-flex;align-items:center;gap:9px;font-weight:700;font-size:14px;letter-spacing:.03em;color:var(--green);white-space:nowrap}
+.way-prod .ar{transition:transform .3s var(--ease)}
+.way:hover .way-prod .ar{transform:translateX(4px)}
+.way-desc{grid-column:1/-1;margin:6px 0 0;color:var(--muted);font-size:15.5px;line-height:1.5;max-width:64ch}
+
+/* ---------- det som gör oss annorlunda ---------- */
+.diff{display:grid;gap:0;margin:34px 0 4px;max-width:780px}
+.diff-row{display:grid;grid-template-columns:1fr 28px 1fr;gap:18px;align-items:center;padding:18px 0;border-top:1px solid var(--line)}
+.diff-row:last-child{border-bottom:1px solid var(--line)}
+.diff-row .o{color:var(--muted-2);font-size:16px;line-height:1.35}
+.diff-row .arr{color:var(--green);font-weight:700;text-align:center}
+.diff-row .f{font-family:var(--serif);font-size:clamp(17px,1.9vw,20px);color:var(--ink);letter-spacing:-.01em;line-height:1.3}
+
+/* ---------- vad vi ofta ser (möjligheter) ---------- */
+.opp{display:flex;flex-wrap:wrap;gap:10px;margin-top:32px;max-width:900px}
+.opp span{font-size:14.5px;font-weight:500;color:#33403a;background:#fff;border:1px solid var(--line);border-radius:999px;padding:9px 16px}
+
 /* ---------- responsive ---------- */
 @media (max-width:1000px){
   .hero-grid,.value-grid,.role-grid,.process-wrap,.pricing-grid{grid-template-columns:1fr;gap:40px}
@@ -455,4 +479,8 @@ section{position:relative}
   .faq-a{padding:0 22px 22px}
   .yk-card{width:72vw}
   .carousel::before,.carousel::after{display:none}
+  .way{grid-template-columns:1fr;gap:8px}
+  .way-prod{justify-content:flex-start}
+  .diff-row{grid-template-columns:1fr;gap:2px}
+  .diff-row .arr{display:none}
 }
