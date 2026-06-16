@@ -42,32 +42,6 @@
     });
   })();
 
-  /* --- målgruppsgrind + tvåtons-läge (privat/företag) --- */
-  (function(){
-    var gate = document.getElementById('gate');
-    var body = document.body;
-    function setMode(m){
-      var mode = (m === 'privat') ? 'privat' : 'foretag';
-      body.classList.remove('mode-privat','mode-foretag');
-      body.classList.add('mode-' + mode);
-    }
-    if(!/mode-(privat|foretag)/.test(body.className)) setMode('foretag');
-    if(gate){
-      gate.hidden = false;                 // visas varje besök (inget sparas)
-      body.style.overflow = 'hidden';
-      gate.querySelectorAll('[data-mode]').forEach(function(b){
-        b.addEventListener('click', function(){
-          setMode(b.getAttribute('data-mode'));
-          gate.hidden = true;
-          body.style.overflow = '';
-        });
-      });
-    }
-    document.querySelectorAll('.mode-toggle [data-mode]').forEach(function(b){
-      b.addEventListener('click', function(){ setMode(b.getAttribute('data-mode')); });
-    });
-  })();
-
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* --- nav scroll state --- */

@@ -3,23 +3,26 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fixus Consulting — verksamhetsinsikt inifrån organisationen</title>
-<meta name="description" content="Många konsulter ser verksamheten utifrån. Jag går in i den, bygger förtroende och synliggör skillnaden mellan hur verksamheten är tänkt att fungera och hur den fungerar i praktiken." />
+<title>Fixus Consulting — erfarenhet från verkligheten</title>
+<meta name="description" content="Jag har spenderat tjugo år i verksamheter — industri, logistik, handel, restaurang, fastighet, räddning och IT. Nu hjälper jag företag att förstå sin verksamhet och fatta bättre beslut." />
 
+<!-- favicon + mobil-tema (använder varumärkesmärket) -->
 <meta name="theme-color" content="#13241d" />
 <link rel="icon" type="image/png" href="assets/fixus-mark.png" />
 <link rel="apple-touch-icon" href="assets/fixus-mark.png" />
 
+<!-- delning på sociala medier (Open Graph + Twitter).
+     OBS: gör og:url och og:image absoluta (https://dindomän/...) när sidan fått en domän. -->
 <meta property="og:type" content="website" />
 <meta property="og:locale" content="sv_SE" />
 <meta property="og:site_name" content="Fixus Consulting" />
-<meta property="og:title" content="Många konsulter granskar verksamheten utifrån. Jag går in i den." />
-<meta property="og:description" content="Jag arbetar nära människorna, processerna och vardagen tills jag förstår det som inte syns i rapporterna — och översätter det till beslut och åtgärder som ledningen kan agera på." />
+<meta property="og:title" content="Erfarenhet går inte att läsa sig till — den byggs i verkligheten." />
+<meta property="og:description" content="Jag har spenderat tjugo år i verksamheter. Nu hjälper jag företag att förstå sin verksamhet och fatta bättre beslut." />
 <meta property="og:image" content="assets/pierre.jpg" />
 <meta property="og:image:alt" content="Pierre Nilsson, Fixus Consulting" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Många konsulter granskar verksamheten utifrån. Jag går in i den." />
-<meta name="twitter:description" content="Verksamhetsinsikt inifrån organisationen — jag synliggör skillnaden mellan hur verksamheten är tänkt att fungera och hur den fungerar i praktiken." />
+<meta name="twitter:title" content="Erfarenhet går inte att läsa sig till — den byggs i verkligheten." />
+<meta name="twitter:description" content="Jag har spenderat tjugo år i verksamheter. Nu hjälper jag företag att förstå sin verksamhet och fatta bättre beslut." />
 <meta name="twitter:image" content="assets/pierre.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,12 +30,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="fixus.css">
 
+<!-- strukturerad data för sökmotorer (endast verkliga uppgifter från sidan) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   "name": "Fixus Consulting",
-  "description": "Operativ verksamhetsinsikt inifrån organisationen. Pierre Nilsson arbetar i verksamheten, bygger förtroende och synliggör skillnaden mellan den formella organisationen och den faktiska vardagen — och översätter det till beslut och åtgärder.",
+  "description": "Operativ förstärkning, verksamhetsutveckling och organisationsinsikt. Bygger på Pierre Nilssons ovanligt breda erfarenhet från industri, logistik, handel, restaurang, fastighet, räddningstjänst, arbetsmiljö, styrelsearbete, entreprenörskap och IT.",
   "areaServed": { "@type": "Country", "name": "Sverige" },
   "availableLanguage": "sv",
   "email": "Pirrefixus@gmail.com",
@@ -47,20 +51,7 @@
 }
 </script>
 </head>
-<body class="mode-foretag">
-
-<!-- ============ MÅLGRUPPSGRIND (visas varje besök; JS avslöjar) ============ -->
-<div id="gate" class="gate" hidden>
-  <div class="gate-window">
-    <span class="gate-kicker">Innan vi börjar</span>
-    <h2>Hur vill du se Fixus?</h2>
-    <p>Samma person bakom — jag anpassar bara hur jag berättar det.</p>
-    <div class="gate-choices">
-      <button type="button" data-mode="privat"><b>Privatperson</b><span>Du vill ha hjälp i vardagen</span></button>
-      <button type="button" data-mode="foretag"><b>Företag</b><span>Du vill förstå och förbättra en verksamhet</span></button>
-    </div>
-  </div>
-</div>
+<body>
 
 <div class="progress" aria-hidden="true"><span></span></div>
 
@@ -73,14 +64,10 @@
     </a>
     <nav class="nav-links">
       <a href="#ompierre">Vem är jag</a>
-      <a href="#glasvagg">Glasväggen</a>
       <a href="#paket">Tjänster</a>
-      <a href="#metod">Så arbetar jag</a>
+      <a href="#varfor">Varför</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <div class="mode-toggle" role="group" aria-label="Visa sidan för">
-      <button type="button" data-mode="privat">Privat</button><button type="button" data-mode="foretag">Företag</button>
-    </div>
     <span class="nav-cta-wrap"><a class="btn" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett samtal</a></span>
     <button class="nav-toggle" aria-label="Meny" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
@@ -88,9 +75,8 @@
 
 <div class="mobile-menu" id="mobileMenu">
   <a href="#ompierre">Vem är jag</a>
-  <a href="#glasvagg">Glasväggen</a>
   <a href="#paket">Tjänster</a>
-  <a href="#metod">Så arbetar jag</a>
+  <a href="#varfor">Varför det fungerar</a>
   <a href="#kontakt">Kontakt</a>
   <a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett samtal →</a>
 </div>
@@ -107,13 +93,12 @@
     <div class="hero-grid">
       <div>
         <div class="status-pill reveal in"><span class="led"></span>Tillgänglig för nya uppdrag</div>
-        <div class="eyebrow reveal in"><span class="v-foretag">Operativ verksamhetsinsikt – inifrån organisationen</span><span class="v-privat">Erfarenhet från verkligheten</span></div>
-        <h1 class="reveal in d1"><span class="vb-foretag">När möten, workshops och tidigare konsulter inte löst problemet — <em>tar jag reda på varför.</em></span><span class="vb-privat">Jag kliver in där ni behöver mig — <em>och hjälper er framåt.</em></span></h1>
-        <p class="hero-lede reveal in d2 vb-foretag">De flesta ledningar får sin bild av verksamheten genom rapporter och nyckeltal. Men det som verkligen bromsar arbetet finns ofta i vardagen — i sådant som aldrig dokumenteras eller uttalas. Jag går in där arbetet sker och synliggör skillnaden mellan hur verksamheten är tänkt att fungera och hur den fungerar i praktiken.</p>
-        <p class="hero-lede reveal in d2 vb-privat">Jag går in där arbetet faktiskt sker, skapar förtroende och hjälper er förstå och förbättra vardagen — inifrån.</p>
+        <div class="eyebrow reveal in">När du behöver ett ess i rockärmen</div>
+        <h1 class="reveal in d1">Jag har spenderat tjugo år i verksamheter. <em>Nu hjälper jag företag att förstå dem bättre.</em></h1>
+        <p class="hero-lede reveal in d2">Erfarenhet går inte att läsa sig till — den byggs i verkligheten.</p>
         <div class="hero-ctas reveal in d3">
-          <a class="btn btn-light" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener"><span class="v-foretag">Beskriv problemet ni inte lyckats lösa</span><span class="v-privat">Boka ett samtal</span> <span class="ar">→</span></a>
-          <a class="btn btn-onlight-ghost" href="#metod">Så arbetar jag</a>
+          <a class="btn btn-light" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett samtal <span class="ar">→</span></a>
+          <a class="btn btn-onlight-ghost" href="#ompierre">Vem är jag?</a>
         </div>
         <div class="hero-meta reveal in d4">
           <div class="m"><span class="mk"><i></i>Erfarenhet</span><b>20 år</b><span class="md">Industri, logistik, handel, restaurang, fastighet, räddning, IT m.m.</span></div>
@@ -144,7 +129,7 @@
           <p>Redan som tolvåring kaklade jag badrum och monterade kök för att ha råd med min första moped. Sedan dess har jag arbetat inom fler verksamheter än de flesta hinner uppleva under ett helt arbetsliv.</p>
           <p>Jag har varit <span class="hl">säljare, montör, lagerarbetare, truckförare, godsmottagare, terminalarbetare, gjuteriarbetare, fastighetsskötare, servitör, entrévärd, deltidsbrandman och entreprenör</span> — i produktion, logistik, handel, restaurang, fastighetsförvaltning och offentlig verksamhet. Under två år byggde jag upp en självförsörjande ekoby i Spanien.</p>
           <p>Parallellt har jag studerat arbetsmiljö, organisationsutveckling, ledarskap, förändringsledning, styrelsearbete, projektledning och IT.</p>
-          <p>Min breda bakgrund är inte en lista över yrken. Det är anledningen till att jag snabbt kan förstå både <span class="hl">människorna, arbetssätten och de informella strukturerna</span> — för jag har sett samma verksamhet från flera håll, och lärt mig att de viktigaste problemen sällan syns från bara ett perspektiv.</p>
+          <p>Gemensamt för allt jag gjort är en sak: <span class="hl">nyfikenhet</span>. Jag vill förstå hur saker fungerar. Hur människor fungerar. Hur organisationer fungerar. Och varför vissa verksamheter lyckas bättre än andra. Det är den nyfikenheten som ligger bakom Fixus Consulting.</p>
           <div class="fields">
             <span>Industri</span><span>Logistik</span><span>Handel</span><span>Restaurang</span><span>Fastighet</span><span>Räddningstjänst</span><span>Arbetsmiljö</span><span>Fackligt</span><span>Styrelser</span><span>Entreprenörskap</span><span>IT</span>
           </div>
@@ -158,9 +143,9 @@
     <div class="wrap">
       <div class="roller-head reveal">
         <div class="sec-head" style="margin:0">
-          <span class="idx">Samma person · båda sidor</span>
-          <h2 class="title">Jag har sett verksamheten från <em>båda sidor</em>.</h2>
-          <p class="lede" style="margin-top:14px">Jag har arbetat i produktionen, lagret, köket, driften och räddningstjänsten — men också med arbetsmiljö, organisation, projekt, ledning och förändring.</p>
+          <span class="idx">Samma person · många miljöer</span>
+          <h2 class="title">Jag har varit <em>överallt</em>.</h2>
+          <p class="lede" style="margin-top:14px">På golvet, i lagret, i köket, på bygget, i driften — och i ledningsrummet. Det är därför jag förstår en ny verksamhet snabbt.</p>
         </div>
         <div class="carousel-nav">
           <button class="cbtn prev" type="button" aria-label="Föregående bilder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg></button>
@@ -180,156 +165,75 @@
     </div>
   </section>
 
-  <!-- ============ USP-BAND (dark, tvåtons) ============ -->
-  <section class="sec" style="background:var(--graphite)" data-screen-label="USP">
-    <div class="wrap" style="max-width:860px;margin-inline:auto;text-align:center">
-      <h2 class="title" style="color:#f6f1e7"><span class="vb-foretag">Många konsulter <em style="color:var(--mint)">granskar</em> verksamheten utifrån. Jag går in i den.</span><span class="vb-privat">Många ser verksamheten utifrån. Jag arbetar <em style="color:var(--mint)">i</em> den.</span></h2>
-      <p class="lede" style="color:#aebeb4;margin:22px auto 0">Jag arbetar nära människorna, processerna och vardagen tills jag förstår det som inte syns i rapporterna — och översätter det till beslut och åtgärder ni kan agera på. Jag lämnar inte bara en bild. Jag kan stanna tills förändringen fungerar i praktiken.</p>
+  <!-- ============ KÄRNBUDSKAP (band) ============ -->
+  <section class="sec" style="background:var(--graphite)" data-screen-label="Kärnbudskap">
+    <div class="wrap" style="max-width:840px;margin-inline:auto;text-align:center">
+      <h2 class="title" style="color:#f6f1e7">De flesta företag styrs genom <em style="color:var(--mint)">rapporter</em>. De bästa förstår vad som händer <em style="color:var(--mint)">mellan</em> dem.</h2>
+      <p class="lede" style="color:#aebeb4;margin:22px auto 0">Jag hjälper ledare att skapa den förståelsen — genom att arbeta där verksamheten faktiskt sker.</p>
     </div>
   </section>
 
-  <!-- ============ GLASVÄGGEN ============ -->
-  <section class="sec" id="glasvagg" data-screen-label="Glasväggen">
-    <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="idx"><span class="n">→</span><span class="ln"></span>Glasväggen</span>
-        <h2 class="title">Det finns en glasvägg i nästan <em>varje organisation</em>.</h2>
-        <p class="lede">Den syns inte i organisationsschemat. Den finns mellan ledningen och verksamheten — mellan det som sägs på mötet och det som sägs efter. Det betyder inte att något är fel. Alla kan vilja samma sak. Ändå ser man verksamheten från olika sidor.</p>
-      </div>
-      <div class="glas-grid reveal d1">
-        <div class="glas-card">
-          <h4>Ledningen ser</h4>
-          <ul><li>Mål och nyckeltal</li><li>Rapporter och processer</li><li>Ansvar och struktur</li><li>Hur det är tänkt att fungera</li></ul>
-        </div>
-        <div class="glas-card">
-          <h4>Verksamheten ser</h4>
-          <ul><li>Undantagen och genvägarna</li><li>Dubbelarbetet</li><li>Personberoendena</li><li>Besluten som inte fungerar i praktiken</li></ul>
-        </div>
-      </div>
-      <p class="glas-core reveal d2">Ingen av bilderna är fel — men ingen är komplett. Mitt arbete är att förstå båda sidor av glasväggen och ge <span class="v-foretag">ledningen</span><span class="v-privat">er</span> en bild av verksamheten som annars är <em>svår att få</em>.</p>
-    </div>
-  </section>
-
-  <!-- ============ VARFÖR DET ÅTERKOMMER (dark band) ============ -->
-  <section class="sec pricing" data-screen-label="Varför det återkommer">
-    <div class="wrap">
-      <div class="sec-head dark reveal" style="max-width:760px">
-        <span class="idx">Varför det återkommer</span>
-        <h2 class="title">Ni saknar förmodligen inte fler <em>idéer</em>.</h2>
-        <p class="lede" style="color:#aebeb4">Ni har kanske redan provat det mesta — ändå kommer samma problem tillbaka.</p>
-      </div>
-      <div class="opp reveal d1" style="margin-top:30px">
-        <span>Workshops</span><span>Medarbetarsamtal</span><span>Konsulter</span><span>Enkäter</span><span>Förbättringsmöten</span><span>Handlingsplaner</span><span>Nya processer</span>
-      </div>
-      <p class="glas-core reveal d2" style="color:#f6f1e7">Ofta beror det inte på brist på ambition eller kompetens — utan på att åtgärderna byggde på en <em style="color:var(--mint)">ofullständig bild</em> av hur verksamheten faktiskt fungerar. Man löser problemen som syns, inte orsakerna som skapar dem.</p>
-    </div>
-  </section>
-
-  <!-- ============ SÅ KAN JAG HJÄLPA ER (vägar in) ============ -->
+  <!-- ============ HUR JAG HJÄLPER ER (vägar in) ============ -->
   <section class="sec" id="paket" style="background:var(--paper-2)" data-screen-label="Tjänster">
     <div class="wrap">
       <div class="sec-head reveal">
-        <span class="idx"><span class="n">→</span><span class="ln"></span>Så kan jag hjälpa er</span>
-        <h2 class="title">Fem vägar in — med <em>samma kärna</em>.</h2>
-        <p class="lede">Oavsett väg går jag in i verksamheten, bygger förtroende och hjälper er framåt. Fixus Inside är kärnan — de andra är olika sätt att ta in samma förmåga.</p>
+        <span class="idx"><span class="n">→</span><span class="ln"></span>Hur jag hjälper er</span>
+        <h2 class="title">Fem sätt att ta in <em>förmågan</em>.</h2>
+        <p class="lede">Oavsett uppdrag går jag in i verksamheten, bygger förtroende och hjälper er framåt utifrån det som faktiskt händer. Välj vägen som matchar behovet.</p>
       </div>
       <div class="ways reveal d1">
         <a class="way" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
-          <span class="way-need">När en kritisk funktion behöver förstärkning snabbt</span>
+          <span class="way-need">Behöver ni täcka upp för en nyckelperson?</span>
           <span class="way-prod">Fixus Cover <span class="ar">→</span></span>
-          <span class="way-desc">Operativ förstärkning vid frånvaro, arbetstoppar eller ett tillfälligt kapacitetsgap.</span>
+          <span class="way-desc">Operativ förstärkning när någon saknas — vid sjukskrivning, rekryteringsgap eller arbetstoppar. Med erfarenhet från arbetsmiljö, ledarskap och utveckling i bagaget.</span>
         </a>
         <a class="way" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
-          <span class="way-need">När verksamheten behöver struktur, samordning eller ledarstöd</span>
+          <span class="way-need">Behöver teamet mer struktur och ledarstöd?</span>
           <span class="way-prod">Fixus Lead <span class="ar">→</span></span>
-          <span class="way-desc">Jag går in som samordnare, teamledare eller operativt verksamhetsstöd under en avgränsad period.</span>
-        </a>
-        <a class="way feat" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
-          <span class="way-tag" style="grid-column:1/-1">Kärnan</span>
-          <span class="way-need">När samma problem återkommer trots att ni redan försökt lösa dem</span>
-          <span class="way-prod">Fixus Inside <span class="ar">→</span></span>
-          <span class="way-desc">Inbäddad verksamhetsinsikt som synliggör skillnaden mellan den formella organisationen och den faktiska vardagen — och ger en nulägesbild, riskbild, möjlighetsbild och konkreta åtgärder i prioriterad ordning.</span>
+          <span class="way-desc">Jag går in som samordnare, teamledare eller verksamhetsstöd när ingen hinner leda — med koordinering, onboarding och avlastning.</span>
         </a>
         <a class="way" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
-          <span class="way-need">När ni vet vad som behöver förändras men inte får det genomfört</span>
+          <span class="way-need">Vill ni förstå vad som faktiskt bromsar verksamheten?</span>
+          <span class="way-prod">Fixus Insight <span class="ar">→</span></span>
+          <span class="way-desc">Verksamhetsinsikt som tjänst: en period i verksamheten som ger en nulägesbild, en riskbild, en möjlighetsbild och konkreta rekommendationer.</span>
+        </a>
+        <a class="way" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
+          <span class="way-need">Behöver ni genomföra en förändring?</span>
           <span class="way-prod">Fixus Improve <span class="ar">→</span></span>
-          <span class="way-desc">Projekt- och förändringsledning som förflyttar förbättringen från beslut till fungerande arbetssätt.</span>
+          <span class="way-desc">Jag driver förändringen i mål som projekt- och förändringsledare när idéerna finns men ingen hinner driva dem.</span>
         </a>
         <a class="way" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
-          <span class="way-need">När verksamheten behöver en integrerad problemlösare med större ansvar</span>
+          <span class="way-need">Behöver ni någon som tar ett större ansvar under en period?</span>
           <span class="way-prod">Fixus Embedded <span class="ar">→</span></span>
-          <span class="way-desc">En kombination av operativ förstärkning, verksamhetsinsikt, ledningsstöd och förändringsledning under en längre period.</span>
+          <span class="way-desc">Premium: tillfällig verksamhetskapacitet — interimresurs, förändringsledare, operativ problemlösare och ledningsstöd i en och samma person.</span>
         </a>
       </div>
     </div>
   </section>
 
-  <!-- ============ SÅ ARBETAR JAG (scroll-driven, 6 steg) ============ -->
-  <section class="sec" id="metod" data-screen-label="Så arbetar jag">
+  <!-- ============ VARFÖR DET FUNGERAR (dark) ============ -->
+  <section class="sec pricing" id="varfor" data-screen-label="Varför">
     <div class="wrap">
-      <div class="sec-head reveal">
-        <span class="idx"><span class="n">→</span><span class="ln"></span>Så arbetar jag</span>
-        <h2 class="title">Sex steg — <em>inifrån</em>.</h2>
-        <p class="lede">Förståelse skapas genom närvaro. Därför arbetar jag där verksamheten faktiskt sker.</p>
-      </div>
-      <div class="process-wrap">
-        <div class="process-aside">
-          <div class="pa-num"><span class="nval">01</span><span class="slash">/06</span></div>
-          <div class="pa-label">Ingång</div>
-          <div class="pa-track">
-            <div class="tk"><span class="tkdot"></span>Ingång</div>
-            <div class="tk"><span class="tkdot"></span>Förtroende</div>
-            <div class="tk"><span class="tkdot"></span>Mönster</div>
-            <div class="tk"><span class="tkdot"></span>Perspektiv</div>
-            <div class="tk"><span class="tkdot"></span>Återföring</div>
-            <div class="tk"><span class="tkdot"></span>Genomförande</div>
+      <div class="pricing-grid">
+        <div class="sec-head dark reveal">
+          <span class="idx">Varför det fungerar</span>
+          <h2 class="title">Inte för att jag kan en metod. <em>Utan för att jag varit på båda sidor.</em></h2>
+          <p class="lede" style="color:#aebeb4">Jag förstår hur beslut påverkar människor — och hur människor påverkar resultat.</p>
+        </div>
+        <div class="reveal d1">
+          <div class="price-cta">
+            <div class="pc-k">Det operativa arbetet är metoden</div>
+            <h3>Förståelsen är värdet.</h3>
+            <p>Beskriv läget så ser vi tillsammans hur jag kan hjälpa er framåt.</p>
+            <a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener" style="background:var(--mint);color:var(--green-d)">Boka ett samtal <span class="ar">→</span></a>
           </div>
         </div>
-        <div class="psteps">
-          <div class="pstep" data-label="Ingång">
-            <div class="ps-h"><span class="ps-n">01</span><h3>Jag går in i verksamheten</h3></div>
-            <p>Jag arbetar där vardagen faktiskt sker — inte enbart genom intervjuer och presentationer.</p>
-          </div>
-          <div class="pstep" data-label="Förtroende">
-            <div class="ps-h"><span class="ps-n">02</span><h3>Jag bygger förtroende</h3></div>
-            <p><span class="vb-foretag">Jag lyssnar utan att agera kontrollant, revisor eller utsänd övervakare.</span><span class="vb-privat">Jag lyssnar — inte för att kontrollera, utan för att förstå.</span></p>
-          </div>
-          <div class="pstep" data-label="Mönster">
-            <div class="ps-h"><span class="ps-n">03</span><h3><span class="vb-foretag">Jag observerar mönster</span><span class="vb-privat">Jag ser mönster</span></h3></div>
-            <p>Jag jämför processer, beslut och ansvar med hur arbetet faktiskt utförs.</p>
-          </div>
-          <div class="pstep" data-label="Perspektiv">
-            <div class="ps-h"><span class="ps-n">04</span><h3>Jag sammanför perspektiven</h3></div>
-            <p>Jag identifierar var ledningens och verksamhetens bilder skiljer sig åt — och varför.</p>
-          </div>
-          <div class="pstep" data-label="Återföring">
-            <div class="ps-h"><span class="ps-n">05</span><h3>Jag återför en handlingsbar bild</h3></div>
-            <p>Ledningen får mönster, orsaker, risker och möjligheter — inte skvaller eller utpekade individer.</p>
-          </div>
-          <div class="pstep" data-label="Genomförande">
-            <div class="ps-h"><span class="ps-n">06</span><h3>Jag hjälper till att genomföra</h3></div>
-            <p>Jag kan stanna kvar och hjälpa organisationen tills förändringarna fungerar i praktiken.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============ ETISK AVGRÄNSNING ============ -->
-  <section class="sec" id="etik" style="background:var(--paper-2)" data-screen-label="Trygghet">
-    <div class="wrap">
-      <div class="sec-head reveal" style="max-width:760px">
-        <span class="idx">Trygghet</span>
-        <h2 class="title"><span class="vb-foretag">Jag granskar systemet — <em>inte människorna</em>.</span><span class="vb-privat">Jag tittar på systemet — <em>inte på personerna</em>.</span></h2>
-      </div>
-      <div class="etik reveal d1" style="margin-top:34px">
-        <p>Jag går inte in i verksamheten för att övervaka medarbetare eller hitta någon att skylla på. Mitt uppdrag är att förstå vilka strukturer, arbetssätt och förutsättningar som gör det svårt för människor att lyckas. Jag återför mönster och organisatoriska orsaker — utan att bryta individuella förtroenden. Det gör tjänsten tryggare både för ledningen och medarbetarna.</p>
       </div>
     </div>
   </section>
 
   <!-- ============ VANLIGA FRÅGOR ============ -->
-  <section class="sec" id="faq" data-screen-label="Vanliga frågor">
+  <section class="sec" id="faq" style="background:var(--paper-2)" data-screen-label="Vanliga frågor">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="idx">Vanliga frågor</span>
@@ -337,24 +241,24 @@
       </div>
       <div class="faq-list">
         <details class="faq-item reveal">
-          <summary>Vad skiljer er från en vanlig managementkonsult?<span class="fq-i" aria-hidden="true"></span></summary>
-          <div class="faq-a">En managementkonsult ser verksamheten utifrån och lämnar en rapport. Jag arbetar <strong>i</strong> den, bygger förtroende och stannar tills förändringen fungerar i praktiken — det är skillnaden mellan en bild av verksamheten och en förståelse för den.</div>
-        </details>
-        <details class="faq-item reveal">
           <summary>Är det här bemanning eller konsulting?<span class="fq-i" aria-hidden="true"></span></summary>
-          <div class="faq-a">Varken eller — och lite av varje. Jag kliver in där verksamheten behöver mig: täcka upp (Cover), leda (Lead), förstå (Inside), genomföra (Improve) eller ta ett större ansvar (Embedded). Det gemensamma är att jag arbetar <strong>i</strong> verksamheten, inte vid sidan av.</div>
-        </details>
-        <details class="faq-item reveal">
-          <summary>Känner sig personalen övervakad?<span class="fq-i" aria-hidden="true"></span></summary>
-          <div class="faq-a">Nej. Jag tittar på systemet och förutsättningarna — inte på enskilda personer — och återför mönster och organisatoriska orsaker, aldrig utpekade individer. Metoden bygger på förtroende åt båda håll, och det gör den tryggare för alla.</div>
+          <div class="faq-a">Varken eller — och lite av varje. Jag kliver in där verksamheten behöver mig: täcka upp (Cover), leda (Lead), förstå (Insight), genomföra (Improve) eller ta ett större ansvar (Embedded). Det gemensamma är att jag arbetar <strong>i</strong> verksamheten, inte vid sidan av.</div>
         </details>
         <details class="faq-item reveal">
           <summary>Hur långa är uppdragen?<span class="fq-i" aria-hidden="true"></span></summary>
-          <div class="faq-a">Från en kort insats på någon vecka till löpande närvaro över flera månader. Du väljer nivå — <strong>Cover, Lead, Inside, Improve</strong> eller <strong>Embedded</strong> — och uppdraget kan växa under tiden om behovet gör det.</div>
+          <div class="faq-a">Från en kort insats på någon vecka till löpande närvaro över flera månader. Du väljer nivå — <strong>Cover, Lead, Insight, Improve</strong> eller <strong>Embedded</strong> — och uppdraget kan växa under tiden om behovet gör det.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Arbetar ni på plats eller på distans?<span class="fq-i" aria-hidden="true"></span></summary>
+          <div class="faq-a">På plats i verksamheten där behovet finns — hela poängen är att förstå vardagen inifrån. Hybrid fungerar väl för uppföljning och avstämningar med ledningen.</div>
         </details>
         <details class="faq-item reveal">
           <summary>Vad kostar det?<span class="fq-i" aria-hidden="true"></span></summary>
           <div class="faq-a">Det finns ingen fast prislista. Priset sätts utifrån uppdragets nivå, ansvar, längd och om förändrings- och förbättringsarbete ingår. Ramen sätter vi tillsammans i ett <strong>kostnadsfritt första samtal</strong>.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Vilka branscher passar det för?<span class="fq-i" aria-hidden="true"></span></summary>
+          <div class="faq-a">Operativt kliver jag in i praktiska yrken som inte kräver särskild licens — restaurang och kök, lager och logistik, montering, industri och produktion, drift och hantverk. Och min bredd gör att jag snabbt förstår nya miljöer även utanför dem.</div>
         </details>
         <details class="faq-item reveal">
           <summary>Hur kommer vi igång?<span class="fq-i" aria-hidden="true"></span></summary>
@@ -368,7 +272,7 @@
   <section class="closing" id="kontakt" data-screen-label="Kontakt">
     <div class="wrap closing-in reveal">
       <div class="eyebrow">Nästa steg</div>
-      <h2>Beskriv problemet ni <em>inte lyckats lösa</em>.</h2>
+      <h2>Vill ni förstå er verksamhet <em>bättre</em>?</h2>
       <p>Boka ett första samtal så ser vi om Fixus Consulting passar ert behov.</p>
     </div>
 
@@ -415,7 +319,7 @@
             <img src="assets/fixus-mark.png" alt="" />
             <span><span class="bn" style="color:#f3ede1">FIXUS</span><span class="bs" style="color:#8aa094">Consulting</span></span>
           </a>
-          <p class="footer-tag">Operativ verksamhetsinsikt inifrån organisationen — jag hjälper ledare att förstå och förbättra det som inte syns i rapporterna.</p>
+          <p class="footer-tag">Erfarenhet från verkligheten — jag hjälper företag att förstå sin verksamhet och fatta bättre beslut.</p>
         </div>
         <div class="footer-col">
           <h4>Kontakt</h4>
@@ -427,9 +331,8 @@
         <div class="footer-col">
           <h4>Innehåll</h4>
           <a href="#ompierre">Vem är jag</a>
-          <a href="#glasvagg">Glasväggen</a>
           <a href="#paket">Tjänster</a>
-          <a href="#metod">Så arbetar jag</a>
+          <a href="#varfor">Varför det fungerar</a>
           <a href="#faq">Vanliga frågor</a>
         </div>
       </div>
