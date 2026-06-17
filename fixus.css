@@ -160,7 +160,7 @@ section{position:relative}
 
 /* ---------- role (dark) ---------- */
 .role{background:radial-gradient(120% 130% at 82% 0%,#1d3a2e 0%,#13241d 50%,#0e1b15 100%);color:#eef3ef}
-.role-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:center}
+.role-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:56px;align-items:start}
 .role-portrait{position:relative;border-radius:22px;overflow:hidden;aspect-ratio:5/6;box-shadow:0 50px 100px -45px rgba(0,0,0,.7)}
 .role-portrait img{width:100%;height:100%;object-fit:cover;object-position:50% 12%;filter:grayscale(1) contrast(1.06) brightness(.98)}
 .role-portrait::after{content:"";position:absolute;inset:0;background:var(--green-d);mix-blend-mode:color;opacity:.8}
@@ -170,6 +170,13 @@ section{position:relative}
 .role-body .hl{color:#eef3ef}
 .fields{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
 .fields span{font-size:12.5px;font-weight:600;letter-spacing:.02em;color:#bfe0d0;border:1px solid rgba(132,200,171,.3);border-radius:999px;padding:7px 13px}
+/* grouped credentials summary — full-width 2x2 block below the bio grid */
+.creds{margin-top:52px;border-top:1px solid var(--line-d);padding-top:36px;display:grid;grid-template-columns:1fr 1fr;gap:30px 56px}
+.cred-row{display:flex;flex-direction:column;gap:13px}
+.cred-k{font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mint)}
+.cred-tags{display:flex;flex-wrap:wrap;gap:8px}
+.cred-tags span{font-size:12.5px;font-weight:600;letter-spacing:.02em;color:#bfe0d0;border:1px solid rgba(132,200,171,.3);border-radius:999px;padding:7px 13px}
+@media (max-width:640px){.creds{grid-template-columns:1fr;gap:26px;margin-top:40px;padding-top:30px}}
 
 /* ---------- process (scroll-driven) ---------- */
 .process-wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;margin-top:56px;align-items:start}
