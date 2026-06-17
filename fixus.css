@@ -69,7 +69,7 @@ em{font-style:italic}
 .nav-cta-wrap .btn{background:var(--mint);color:var(--green-d);box-shadow:none}
 .nav-cta-wrap .btn:hover{background:#9bd4bb}
 /* scrolled state -> paper */
-.nav.scrolled{background:rgba(244,239,230,.88);backdrop-filter:blur(14px) saturate(1.2);border-color:var(--line);box-shadow:0 6px 24px -18px rgba(21,32,28,.5)}
+.nav.scrolled{background:rgba(244,239,230,.88);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);border-color:var(--line);box-shadow:0 6px 24px -18px rgba(21,32,28,.5)}
 .nav.scrolled .brand img{filter:none}
 .nav.scrolled .brand .bn{color:var(--ink)}
 .nav.scrolled .brand .bs{color:var(--muted)}
@@ -301,7 +301,7 @@ section{position:relative}
 .nav-toggle.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav-toggle.open span:nth-child(2){opacity:0}
 .nav-toggle.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-menu{position:fixed;inset:0;z-index:55;background:linear-gradient(160deg,#15302590,#0d1a15);backdrop-filter:blur(20px);
+.mobile-menu{position:fixed;inset:0;z-index:55;background:linear-gradient(160deg,#15302590,#0d1a15);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);
   display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0 10vw;opacity:0;visibility:hidden;transition:opacity .35s,visibility .35s}
 .mobile-menu.open{opacity:1;visibility:visible}
 .mobile-menu a{font-family:var(--serif);font-size:30px;color:#eef3ef;padding:14px 0;border-bottom:1px solid var(--line-d)}
@@ -377,7 +377,7 @@ section{position:relative}
 
 /* sticky mobile CTA */
 .mobile-cta{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;padding:12px 16px calc(12px + env(safe-area-inset-bottom));
-  background:rgba(13,26,21,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line-d);transform:translateY(120%);transition:transform .4s var(--ease)}
+  background:rgba(13,26,21,.92);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-top:1px solid var(--line-d);transform:translateY(120%);transition:transform .4s var(--ease)}
 .mobile-cta.show{transform:none}
 .mobile-cta .btn{width:100%;justify-content:center}
 
