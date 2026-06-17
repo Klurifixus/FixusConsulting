@@ -183,31 +183,31 @@
         <p class="lede">Oavsett uppdrag går jag in i verksamheten, bygger förtroende och hjälper er framåt utifrån det som faktiskt händer. Välj vägen som matchar behovet.</p>
       </div>
       <div class="ways reveal d1">
-        <a class="way" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
+        <button type="button" class="way" data-svc="cover" aria-haspopup="dialog">
           <span class="way-need">Behöver ni täcka upp för en nyckelperson?</span>
           <span class="way-prod">Fixus Cover <span class="ar">→</span></span>
           <span class="way-desc">Operativ förstärkning när någon saknas — vid sjukskrivning, rekryteringsgap eller arbetstoppar. Med erfarenhet från arbetsmiljö, ledarskap och utveckling i bagaget.</span>
-        </a>
-        <a class="way" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
+        </button>
+        <button type="button" class="way" data-svc="lead" aria-haspopup="dialog">
           <span class="way-need">Behöver teamet mer struktur och ledarstöd?</span>
           <span class="way-prod">Fixus Lead <span class="ar">→</span></span>
           <span class="way-desc">Jag går in som samordnare, teamledare eller verksamhetsstöd när ingen hinner leda — med koordinering, onboarding och avlastning.</span>
-        </a>
-        <a class="way" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
+        </button>
+        <button type="button" class="way" data-svc="insight" aria-haspopup="dialog">
           <span class="way-need">Vill ni förstå vad som faktiskt bromsar verksamheten?</span>
           <span class="way-prod">Fixus Insight <span class="ar">→</span></span>
           <span class="way-desc">Verksamhetsinsikt som tjänst: en period i verksamheten som ger en nulägesbild, en riskbild, en möjlighetsbild och konkreta rekommendationer.</span>
-        </a>
-        <a class="way" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
+        </button>
+        <button type="button" class="way" data-svc="improve" aria-haspopup="dialog">
           <span class="way-need">Behöver ni genomföra en förändring?</span>
           <span class="way-prod">Fixus Improve <span class="ar">→</span></span>
           <span class="way-desc">Jag driver förändringen i mål som projekt- och förändringsledare när idéerna finns men ingen hinner driva dem.</span>
-        </a>
-        <a class="way" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
+        </button>
+        <button type="button" class="way" data-svc="embedded" aria-haspopup="dialog">
           <span class="way-need">Behöver ni någon som tar ett större ansvar under en period?</span>
           <span class="way-prod">Fixus Embedded <span class="ar">→</span></span>
           <span class="way-desc">Premium: tillfällig verksamhetskapacitet — interimresurs, förändringsledare, operativ problemlösare och ledningsstöd i en och samma person.</span>
-        </a>
+        </button>
       </div>
     </div>
   </section>
@@ -348,6 +348,25 @@
 
 <!-- sticky mobile CTA -->
 <div class="mobile-cta"><a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett samtal <span class="ar">→</span></a></div>
+
+<!-- ============ TJÄNST-MODAL (vägar in) ============ -->
+<dialog class="svc-modal" id="svcModal" aria-labelledby="svcModalTitle">
+  <div class="svc-modal-inner">
+    <button type="button" class="svc-close" aria-label="Stäng">&times;</button>
+    <span class="svc-eyebrow" data-svc-need></span>
+    <h3 class="svc-title" id="svcModalTitle" data-svc-name></h3>
+    <p class="svc-lead" data-svc-lead></p>
+    <div class="svc-block">
+      <span class="svc-k">Det kan innebära</span>
+      <ul class="svc-list" data-svc-list></ul>
+    </div>
+    <p class="svc-fit" data-svc-fit></p>
+    <div class="svc-actions">
+      <a class="btn btn-solid svc-contact" data-svc-contact href="#">Bli uppringd <span class="ar">→</span></a>
+      <button type="button" class="btn btn-ghost svc-back">Tillbaka</button>
+    </div>
+  </div>
+</dialog>
 
 <script src="fixus.js"></script>
 </body>

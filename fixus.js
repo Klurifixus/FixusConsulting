@@ -238,6 +238,123 @@
     ctrack.addEventListener('pointercancel', cEnd);
   }
 
+  /* --- tjänst-modal (vägar in): klick på ett kort öppnar en fylligare
+     beskrivning; "Bli uppringd" förifyller ett mejl som namnger paketet --- */
+  (function svcModal(){
+    var modal = document.getElementById('svcModal');
+    if(!modal) return;
+
+    var SVC = {
+      cover: {
+        name: 'Fixus Cover',
+        need: 'Täcka upp för en nyckelperson',
+        lead: 'När någon faller bort kan mycket stanna av. Jag går in operativt och håller igång det viktiga tills ni är på fötter igen.',
+        list: [
+          'Täcka en roll vid sjukskrivning, föräldraledighet eller ett rekryteringsgap',
+          'Avlasta vid arbetstoppar och säsong',
+          'Hålla rutiner och leveranser igång utan långt upplärningsbehov',
+          'Lämna över tryggt när ordinarie person är tillbaka'
+        ],
+        fit: 'ni snabbt behöver en erfaren person som kan kliva in och göra jobbet — inte bara vikariera.'
+      },
+      lead: {
+        name: 'Fixus Lead',
+        need: 'Mer struktur och ledarstöd i teamet',
+        lead: 'Ibland finns folket och viljan, men ingen som håller ihop det. Jag kliver in som den som samordnar, leder och avlastar.',
+        list: [
+          'Samordna ett team eller en funktion under en period',
+          'Få ordning på onboarding och vardagsrutiner',
+          'Vara ett nära stöd för en chef som inte räcker till',
+          'Skapa lugn och struktur när tempot är högt'
+        ],
+        fit: 'ni behöver ledarskap nära golvet, inte ännu en konsult på distans.'
+      },
+      insight: {
+        name: 'Fixus Insight',
+        need: 'Förstå vad som faktiskt bromsar',
+        lead: 'Jag arbetar en period i verksamheten och får syn på hur den faktiskt fungerar — inte hur den ser ut på pappret.',
+        list: [
+          'En tid mitt i arbetet, tillsammans med teamet',
+          'En tydlig nulägesbild av vad som fungerar och vad som hakar upp sig',
+          'En bild av risker och möjligheter ni kanske inte ser inifrån',
+          'Konkreta rekommendationer ni kan agera på'
+        ],
+        fit: 'ni anar att något bromsar, men inte riktigt var det sitter.'
+      },
+      improve: {
+        name: 'Fixus Improve',
+        need: 'Genomföra en förändring',
+        lead: 'Idéerna finns ofta redan. Det som saknas är någon som driver dem hela vägen i mål. Det gör jag.',
+        list: [
+          'Leda ett förändrings- eller förbättringsprojekt från start till mål',
+          'Hålla ihop planen, människorna och tempot',
+          'Förankra förändringen där arbetet faktiskt sker',
+          'Se till att det nya fastnar — inte bara införs'
+        ],
+        fit: 'ni vet vad ni vill, men ingen internt hinner driva det.'
+      },
+      embedded: {
+        name: 'Fixus Embedded',
+        need: 'Ett större ansvar under en period',
+        lead: 'Den mest omfattande vägen in: jag tar ett brett operativt ansvar och är flera roller i en — under en avgränsad period.',
+        list: [
+          'Interimsresurs med mandat att driva',
+          'Förändringsledare och operativ problemlösare i samma person',
+          'Ett nära ledningsstöd med förståelse för hela verksamheten',
+          'Trygghet att lämna över något starkare än ni hade'
+        ],
+        fit: 'ni behöver mer än en punktinsats och vill ha en person som bär ansvaret med er.'
+      }
+    };
+
+    var elNeed = modal.querySelector('[data-svc-need]');
+    var elName = modal.querySelector('[data-svc-name]');
+    var elLead = modal.querySelector('[data-svc-lead]');
+    var elList = modal.querySelector('[data-svc-list]');
+    var elFit  = modal.querySelector('[data-svc-fit]');
+    var elContact = modal.querySelector('[data-svc-contact]');
+
+    function mailtoFor(name){
+      return 'mailto:Pirrefixus@gmail.com'
+        + '?subject=' + encodeURIComponent('Intresseanmälan – ' + name)
+        + '&body=' + encodeURIComponent(
+            'Hej Pierre!\n\n' +
+            'Jag har tittat på ' + name + ' och vill veta mer — och bli uppringd.\n\n' +
+            'Namn:\n' +
+            'Företag:\n' +
+            'Telefon:\n' +
+            'Kort om behovet:\n'
+          );
+    }
+
+    function openSvc(key){
+      var s = SVC[key]; if(!s) return;
+      elNeed.textContent = s.need;
+      elName.textContent = s.name;
+      elLead.textContent = s.lead;
+      elList.textContent = '';
+      s.list.forEach(function(t){ var li = document.createElement('li'); li.textContent = t; elList.appendChild(li); });
+      var b = document.createElement('b'); b.textContent = 'Passar när';
+      elFit.textContent = ' ' + s.fit; elFit.insertBefore(b, elFit.firstChild);
+      elContact.setAttribute('href', mailtoFor(s.name));
+      if(typeof modal.showModal === 'function'){ document.body.style.overflow = 'hidden'; modal.showModal(); }
+      else { window.location.href = mailtoFor(s.name); }   // äldre webbläsare: hoppa rakt till mejlet
+    }
+    function closeSvc(){ if(modal.open) modal.close(); }
+
+    Array.prototype.forEach.call(document.querySelectorAll('.way[data-svc]'), function(btn){
+      btn.addEventListener('click', function(){ openSvc(btn.getAttribute('data-svc')); });
+    });
+    var closeBtn = modal.querySelector('.svc-close');
+    var backBtn = modal.querySelector('.svc-back');
+    if(closeBtn) closeBtn.addEventListener('click', closeSvc);
+    if(backBtn) backBtn.addEventListener('click', closeSvc);
+    // klick på mörka bakgrunden (dialog-elementet självt) stänger
+    modal.addEventListener('click', function(e){ if(e.target === modal) closeSvc(); });
+    // återställ scroll när dialogen stängs (X, Esc, bakgrund eller knapp)
+    modal.addEventListener('close', function(){ document.body.style.overflow = ''; });
+  })();
+
   /* --- year --- */
   var yr = document.getElementById('yr');
   if(yr) yr.textContent = new Date().getFullYear();
