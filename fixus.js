@@ -3,28 +3,19 @@
   'use strict';
 
   /* ============================================================
-     BOOKING CONFIG — the one line to edit to go live
+     BOOKING CONFIG — en rad att ändra
      ------------------------------------------------------------
-     Kalenderbokning är uppskjuten tills vidare. Tills dess fångar
-     varje "Boka ett samtal" / "Begär offert"-knapp en intresse-
-     anmälan via e-post (förifyllt namn/telefon) så Pierre kan
-     ringa upp — exakt det flöde vi valt för nu.
+     Varje "Boka ett första samtal" leder tills vidare till
+     uppdragsbeskrivnings-formuläret (uppdragsbeskrivning.html), så
+     att Pierre får in underlag (kontakt + uppdrag) INNAN första
+     kontakten — bättre data inför samtalet än en ren bokning.
 
-     När du vill aktivera kalendern: klistra in din Google Calendar
-     appointment-scheduling-länk i BOOKING_URL nedan, så pekas alla
-     knappar om dit automatiskt. Lämna den tom ('') för e-postflödet.
+     Vill du i stället peka knapparna mot en Google Calendar-
+     bokningslänk: klistra in den i BOOKING_URL nedan, så pekas alla
+     knappar om dit automatiskt. Lämna den tom ('') för formulärflödet.
      ============================================================ */
-  var BOOKING_URL = '';                                            // ← din Google Calendar-bokningslänk (senare)
-  var BOOKING_FALLBACK = 'mailto:pirre@fixusconsulting.se'
-    + '?subject=' + encodeURIComponent('Intresseanmälan – Fixus Consulting')
-    + '&body=' + encodeURIComponent(
-        'Hej Pierre!\n\n' +
-        'Jag vill veta mer om Fixus Consulting och bli uppringd.\n\n' +
-        'Namn:\n' +
-        'Företag:\n' +
-        'Telefon:\n' +
-        'Kort om behovet:\n'
-      );
+  var BOOKING_URL = '';                                            // ← (valfritt) Google Calendar-bokningslänk
+  var BOOKING_FALLBACK = 'uppdragsbeskrivning.html';               // förifyllnadsformulär – samlar in underlag inför kontakt
 
   /* Wire every booking CTA to a single destination. The design ships
      with placeholder hrefs (REPLACE_WITH_YOUR_BOOKING_LINK); this
@@ -237,6 +228,47 @@
     ctrack.addEventListener('pointerup', cEnd);
     ctrack.addEventListener('pointercancel', cEnd);
   }
+
+  /* --- lightbox: klick för att förstora en bild (t.ex. HazardLink-affischen) --- */
+  (function(){
+    var triggers = Array.prototype.slice.call(document.querySelectorAll('[data-zoom]'));
+    if(!triggers.length) return;
+    var box = document.createElement('div');
+    box.className = 'lightbox';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-modal', 'true');
+    box.setAttribute('aria-label', 'Förstorad bild');
+    box.innerHTML =
+      '<button type="button" class="lightbox-close" aria-label="Stäng">×</button>' +
+      '<img alt="" />' +
+      '<span class="lightbox-hint">Klicka var som helst eller tryck Esc för att stänga</span>';
+    document.body.appendChild(box);
+    var img = box.querySelector('img');
+    var closeBtn = box.querySelector('.lightbox-close');
+    var lastFocus = null;
+    function open(src, alt){
+      img.setAttribute('src', src);
+      img.setAttribute('alt', alt || '');
+      box.classList.add('open');
+      document.body.style.overflow = 'hidden';
+      lastFocus = document.activeElement;
+      closeBtn.focus();
+    }
+    function close(){
+      box.classList.remove('open');
+      document.body.style.overflow = '';
+      if(lastFocus && lastFocus.focus){ lastFocus.focus(); }
+    }
+    triggers.forEach(function(t){
+      t.addEventListener('click', function(){
+        open(t.getAttribute('data-zoom'), t.getAttribute('data-zoom-alt'));
+      });
+    });
+    box.addEventListener('click', close);   // backdrop, bild eller stäng-knapp
+    document.addEventListener('keydown', function(e){
+      if((e.key === 'Escape' || e.key === 'Esc') && box.classList.contains('open')) close();
+    });
+  })();
 
   /* --- year --- */
   var yr = document.getElementById('yr');

@@ -32,22 +32,25 @@ asset paths behave exactly as in production.
 
 ## Booking flow
 
-Calendar booking is **deferred for now**. Until it's enabled, every
-"Boka ett samtal" / "Begär offert" button opens a prefilled
-**interesseanmälan** e-post (namn / företag / telefon / behov) to
-`pirre@fixusconsulting.se` — so Pierre gets a number to call back.
+Every **"Boka ett första samtal"** button routes to the
+**uppdragsbeskrivning form** (`uppdragsbeskrivning.html`) — so a prospect
+describes their assignment (kontakt + nuläge + mål + omfattning) *before*
+the first contact, giving Pierre real data to prepare with. The form then
+compiles its fields into a prefilled `mailto:` to `pirre@fixusconsulting.se`.
 
-To switch to live calendar booking later, open **`fixus.js`** and set one
-line at the top — every button repoints automatically:
+The destination is two lines at the top of **`fixus.js`** — every booking
+button (hero, nav, service cards, mobile menu, sticky bar, footer, contact
+card) repoints automatically:
 
 ```js
-var BOOKING_URL = '';   // ← paste your Google Calendar appointment-scheduling link
+var BOOKING_URL = '';                                 // optional Google Calendar link
+var BOOKING_FALLBACK = 'uppdragsbeskrivning.html';    // default: the brief form
 ```
 
-> A Google **Appointment schedule** booking link is required (looks like
-> `…/calendar/u/0/appointments/schedules/<token>`), not the generic
-> `…/calendar/u/0/r` app link. Create one via Calendar → Create →
-> Appointment schedule → Share → "Open booking page".
+Leave `BOOKING_URL` empty to use the form. To switch the buttons to a live
+Google **Appointment schedule** link instead, paste it into `BOOKING_URL`
+(looks like `…/calendar/u/0/appointments/schedules/<token>`, not the generic
+`…/calendar/u/0/r` link).
 
 ## Contact details (already wired)
 
