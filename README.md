@@ -26,6 +26,7 @@ asset paths behave exactly as in production.
 | `fixus.js` | Motion & interaction: scroll reveals, the hero arrow draw, the scroll-driven process steps, nav state, mobile menu, scroll progress, the yrkeskarusell. Also wires the booking CTAs (see below). |
 | `assets/` | `fixus-mark.png` (logo), `pierre.jpg` (portrait), `thrive-and-prosper.jpg` (book cover), `yrken/*.webp` (carousel). |
 | `robots.txt`, `sitemap.xml`, `404.html`, `.nojekyll` | SEO/technical: crawl rules + sitemap, a styled 404 page, and the Jekyll opt-out for GitHub Pages. |
+| `uppdragsbeskrivning.html` | Standalone "beskriv ditt uppdrag" form (matches the design); compiles its fields into a prefilled `mailto:` to pirre@fixusconsulting.se. Linked from the 6th service card. Self-contained — its own inline script, no backend. |
 
 > **Custom domain:** `fixusconsulting.se` is registered at STRATO; DNS stays at STRATO (so the STRATO mailbox keeps working) with the apex `A` record → `185.199.108.153` and `www` `CNAME` → `klurifixus.github.io`. The repo `CNAME` file sets the GitHub Pages custom domain. Canonical, OG/Twitter image, JSON-LD `@id`/url, `robots.txt` and `sitemap.xml` use `https://fixusconsulting.se/`.
 

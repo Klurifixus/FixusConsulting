@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Beskriv ditt uppdrag | Fixus Consulting</title>
+<meta name="description" content="Fyll i en kort uppdragsbeskrivning till Fixus Consulting – kontaktuppgifter och vad du behöver hjälp med. Ger underlag för offert inför ett första möte." />
+<link rel="canonical" href="https://fixusconsulting.se/uppdragsbeskrivning.html" />
+<meta name="theme-color" content="#13241d" />
+<link rel="icon" type="image/png" href="/assets/fixus-mark.png" />
+<link rel="apple-touch-icon" href="/assets/fixus-mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/fixus.css">
+</head>
+<body>
+
+<header class="ub-header">
+  <a class="brand" href="/" aria-label="Fixus Consulting – till startsidan">
+    <img src="/assets/fixus-mark.png" alt="" />
+    <span><span class="bn">FIXUS</span><span class="bs">Consulting</span></span>
+  </a>
+  <a class="ub-back" href="/">← Till startsidan</a>
+</header>
+
+<main class="ub-main">
+  <div class="wrap">
+    <div class="ub-head">
+      <span class="idx"><span class="n">→</span><span class="ln"></span>Inför mötet</span>
+      <h1 class="title">Beskriv ditt <em>uppdrag</em>.</h1>
+      <p class="lede">Fyll i så mycket du kan — det ger mig underlag för en offert och gör ett första möte mer effektivt. När du klickar <strong>Skicka</strong> öppnas ditt mejlprogram med allt ifyllt, redo att skickas till <strong>pirre@fixusconsulting.se</strong>.</p>
+    </div>
+
+    <form class="ub" id="ubForm" novalidate>
+      <div class="ub-legend">Kontaktuppgifter</div>
+      <div class="ub-grid">
+        <div class="ub-field"><label for="namn">Namn <span class="req">*</span></label><input id="namn" name="namn" type="text" autocomplete="name" required /></div>
+        <div class="ub-field"><label for="foretag">Företag</label><input id="foretag" name="foretag" type="text" autocomplete="organization" /></div>
+        <div class="ub-field"><label for="epost">E-post <span class="req">*</span></label><input id="epost" name="epost" type="email" autocomplete="email" required /></div>
+        <div class="ub-field"><label for="telefon">Telefon</label><input id="telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+        <div class="ub-field full"><label for="ort">Var sker uppdraget? (ort)</label><input id="ort" name="ort" type="text" /></div>
+      </div>
+
+      <div class="ub-legend">Uppdraget</div>
+      <div class="ub-grid">
+        <div class="ub-field full"><label for="typ">Vilken typ av hjälp?</label>
+          <select id="typ" name="typ">
+            <option value="Vet inte än / osäker">Vet inte än / osäker</option>
+            <option value="Tillfällig operativ förstärkning (Fixus Cover)">Tillfällig operativ förstärkning (Cover)</option>
+            <option value="Teamledning och struktur (Fixus Lead)">Teamledning och struktur (Lead)</option>
+            <option value="Verksamhetsanalys inifrån (Fixus Insight)">Verksamhetsanalys inifrån (Insight)</option>
+            <option value="Genomförande av förbättringar (Fixus Improve)">Genomförande av förbättringar (Improve)</option>
+            <option value="Interim verksamhetskapacitet (Fixus Embedded)">Interim verksamhetskapacitet (Embedded)</option>
+          </select>
+        </div>
+        <div class="ub-field full"><label for="nulage">Nuläge — vad är situationen?</label><textarea id="nulage" name="nulage"></textarea></div>
+        <div class="ub-field full"><label for="mal">Vad vill ni uppnå?</label><textarea id="mal" name="mal"></textarea></div>
+        <div class="ub-field"><label for="omfattning">Omfattning &amp; tidsram</label><input id="omfattning" name="omfattning" type="text" placeholder="t.ex. 2 dagar/vecka i 3 mån" /></div>
+        <div class="ub-field"><label for="start">Önskad start</label><input id="start" name="start" type="text" placeholder="t.ex. omgående / i höst" /></div>
+        <div class="ub-field full"><label for="ovrigt">Övrigt</label><textarea id="ovrigt" name="ovrigt"></textarea></div>
+      </div>
+
+      <div class="ub-actions">
+        <button type="submit" class="btn btn-solid">Skicka till Pierre <span class="ar">→</span></button>
+        <button type="button" class="btn btn-ghost" id="ubCopy">Kopiera sammanfattning</button>
+      </div>
+      <p class="ub-note" id="ubMsg">Fält märkta med <span class="req">*</span> behövs. Inget skickas automatiskt — knappen öppnar ditt mejlprogram så att du ser och bekräftar innan du skickar.</p>
+    </form>
+  </div>
+</main>
+
+<footer class="footer ub-footer">
+  <div class="wrap footer-bottom">
+    <span>© <span id="yr">2026</span> Fixus Consulting · Pierre Nilsson</span>
+    <a href="/">fixusconsulting.se</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var form = document.getElementById('ubForm');
+  var msg = document.getElementById('ubMsg');
+  var yr = document.getElementById('yr'); if(yr){ yr.textContent = new Date().getFullYear(); }
+  function val(id){ var e = document.getElementById(id); return e ? e.value.trim() : ''; }
+  function buildBody(){
+    return [
+      'UPPDRAGSBESKRIVNING – Fixus Consulting', '',
+      'KONTAKT',
+      'Namn: ' + val('namn'),
+      'Företag: ' + val('foretag'),
+      'E-post: ' + val('epost'),
+      'Telefon: ' + val('telefon'),
+      'Ort: ' + val('ort'), '',
+      'UPPDRAGET',
+      'Typ av hjälp: ' + val('typ'),
+      'Nuläge: ' + val('nulage'),
+      'Vill uppnå: ' + val('mal'),
+      'Omfattning & tidsram: ' + val('omfattning'),
+      'Önskad start: ' + val('start'),
+      'Övrigt: ' + val('ovrigt')
+    ].join('\n');
+  }
+  function valid(){ return val('namn') && /.+@.+\..+/.test(val('epost')); }
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(!valid()){ msg.textContent = 'Fyll i minst namn och en giltig e-postadress.'; msg.style.color = 'var(--brass)'; return; }
+    var subj = 'Uppdragsbeskrivning – ' + (val('foretag') || val('namn'));
+    window.location.href = 'mailto:pirre@fixusconsulting.se?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(buildBody());
+    msg.textContent = 'Ditt mejlprogram öppnas nu — kontrollera och skicka. Öppnas inget? Använd "Kopiera sammanfattning" och mejla pirre@fixusconsulting.se.';
+    msg.style.color = 'var(--muted)';
+  });
+  document.getElementById('ubCopy').addEventListener('click', function(){
+    var t = buildBody();
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(t).then(
+        function(){ msg.textContent = 'Sammanfattningen är kopierad — klistra in i ett mejl till pirre@fixusconsulting.se.'; msg.style.color = 'var(--green)'; },
+        function(){ msg.textContent = 'Kunde inte kopiera automatiskt — markera texten manuellt.'; msg.style.color = 'var(--brass)'; }
+      );
+    } else {
+      msg.textContent = 'Kopiering stöds inte i din webbläsare — använd "Skicka till Pierre" i stället.'; msg.style.color = 'var(--brass)';
+    }
+  });
+})();
+</script>
+</body>
+</html>
