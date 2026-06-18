@@ -1,8 +1,8 @@
 # Fixus Consulting
 
-One-page marketing site for **Fixus Consulting** — Pierre Nilsson's *embedded operations consultant* offer: operativ förstärkning som samtidigt förbättrar verksamheten inifrån.
+One-page marketing site for **Fixus Consulting** — Pierre Nilsson's *operativ konsult- och interimförstärkning*: praktiskt genomförande, tillfällig arbetsledning, verksamhetsanalys och förbättringsarbete, på plats i verksamheten. Baserat i Vårgårda, uppdrag i Västra Götaland.
 
-Built as a static site (HTML + CSS + JS, no build step) from the Claude Design handoff.
+Built as a static site (HTML + CSS + JS, no build step), published via **GitHub Pages from `main`/root** → https://klurifixus.github.io/FixusConsulting/
 
 ## Run locally
 
@@ -21,10 +21,13 @@ asset paths behave exactly as in production.
 
 | File | Purpose |
 |------|---------|
-| `index.html` | The page — semantic sections (Hero → Värde → Positionering → Uppdrag → Roll → Uppdragsmodell → Paket → Prislogik → FAQ → Kontakt). Includes favicon, social-share (Open Graph/Twitter) and JSON-LD structured data in `<head>`. |
-| `fixus.css` | Visual system: design tokens (`:root`), layout, components, responsive rules. Spectral (serif) + Schibsted Grotesk (sans), deep-green/graphite/warm-paper palette. |
-| `fixus.js` | Motion & interaction: scroll reveals, the hero growth-arrow draw, the scroll-driven uppdragsmodell, nav state, mobile menu, scroll progress. Also wires the booking CTAs (see below). |
-| `assets/` | `fixus-mark.png` (logo mark), `pierre.jpg` (portrait). |
+| `index.html` | The page — **problem-first** semantic sections: Hero → När verksamheten inte kan vänta → Tjänster (5 paket) → Så går det till (process) → Branscher → Om Pierre → Yrkeskarusell → FAQ → Kontakt. Service details are visible HTML cards (no JS modal). `<head>` has canonical, Open Graph/Twitter, and JSON-LD (`Organization` + `WebSite` + `Person` graph, plus a `FAQPage`). |
+| `fixus.css` | Visual system: design tokens (`:root`), layout, components, `:focus-visible`, responsive rules. Spectral (serif) + Schibsted Grotesk (sans); deep-green/graphite/warm-paper palette. |
+| `fixus.js` | Motion & interaction: scroll reveals, the hero arrow draw, the scroll-driven process steps, nav state, mobile menu, scroll progress, the yrkeskarusell. Also wires the booking CTAs (see below). |
+| `assets/` | `fixus-mark.png` (logo), `pierre.jpg` (portrait), `thrive-and-prosper.jpg` (book cover), `yrken/*.webp` (carousel). |
+| `robots.txt`, `sitemap.xml`, `404.html`, `.nojekyll` | SEO/technical: crawl rules + sitemap, a styled 404 page, and the Jekyll opt-out for GitHub Pages. |
+
+> **Base URL TODO:** canonical, OG/Twitter image, JSON-LD `@id`/url, `robots.txt` and `sitemap.xml` all use the live github.io URL. When the Strato domain `fixusconsulting.se` is pointed at GitHub Pages, add a `CNAME` file and find/replace the base URL (TODO comments mark every spot).
 
 ## Booking flow
 
