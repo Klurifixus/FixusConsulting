@@ -147,7 +147,7 @@ section{position:relative}
 .value-card .who span{font-size:12.5px;font-weight:600;color:#bfe0d0;border:1px solid rgba(132,200,171,.32);border-radius:999px;padding:6px 12px}
 
 /* ---------- assignments (Typiska uppdrag) ---------- */
-.assign-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+.assign-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px;grid-auto-rows:1fr}
 .acard{background:#fff;border:1px solid var(--line);border-radius:22px;padding:30px 28px;position:relative;overflow:hidden;min-width:0;
   transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
 .acard::before{content:"";position:absolute;left:0;top:0;height:3px;width:0;background:var(--green);transition:width .5s var(--ease)}
@@ -158,8 +158,7 @@ section{position:relative}
 .acard p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.5}
 .acard.wide{grid-column:span 1}
 /* MaxAI-kort (Digitalisering/AI): utgående länkar till mitt AI-bolag */
-.acard.maxai .ac-note{margin-top:14px;font-size:14px;color:var(--ink);line-height:1.5}
-.acard.maxai .ac-note strong{color:var(--green);font-weight:700}
+.acard.maxai p strong{color:var(--green);font-weight:700}
 .ac-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:18px}
 .ac-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-weight:600;font-size:14px;padding:10px 16px;border-radius:10px;transition:background .25s,transform .25s var(--ease)}
 .ac-btn:hover{background:var(--green-d);transform:translateY(-1px)}
@@ -549,6 +548,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible,.btn:focus-visible,.c
 @media (max-width:680px){
   body{font-size:16px}
   .assign-grid,.pkg-grid,.value-list,.footer-in{grid-template-columns:1fr}
+  .assign-grid{grid-auto-rows:auto}
   .hero{min-height:auto;padding:110px 0 70px}
   .hero-meta{grid-template-columns:1fr;gap:0;padding-top:22px}
   .hero-meta .m{padding:18px 0;border-left:none;border-top:1px solid var(--line-d)}
