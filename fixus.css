@@ -215,12 +215,12 @@ section{position:relative}
   transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
 .pkg:hover{transform:translateY(-6px);box-shadow:0 30px 60px -34px rgba(21,40,30,.42)}
 .pkg.feat{background:linear-gradient(180deg,#16242b,#11201b);color:#eef3ef;border-color:transparent}
-.pkg-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;row-gap:10px}
-.pkg .pname{font-family:var(--serif);font-weight:500;font-size:27px;letter-spacing:-.01em}
+.pkg-top{display:flex;flex-direction:column;align-items:flex-start;gap:13px}
+.pkg .pname{font-family:var(--serif);font-weight:500;font-size:27px;letter-spacing:-.01em;line-height:1.14;min-height:62px}
 .pkg .ptag2{font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brass);
   border:1px solid rgba(169,130,78,.4);border-radius:999px;padding:5px 10px}
 .pkg.feat .ptag2{color:var(--mint);border-color:rgba(132,200,171,.45)}
-.pkg .pfor{color:var(--muted);font-size:14.5px;line-height:1.45;margin:14px 0 22px;min-height:42px}
+.pkg .pfor{color:var(--muted);font-size:14.5px;line-height:1.45;margin:14px 0 22px;min-height:72px}
 .pkg.feat .pfor{color:#aebeb4}
 .pkg .plist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px;border-top:1px solid var(--line);padding-top:22px}
 .pkg.feat .plist{border-color:var(--line-d)}
