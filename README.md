@@ -34,7 +34,7 @@ asset paths behave exactly as in production.
 Calendar booking is **deferred for now**. Until it's enabled, every
 "Boka ett samtal" / "Begär offert" button opens a prefilled
 **interesseanmälan** e-post (namn / företag / telefon / behov) to
-`Pirrefixus@gmail.com` — so Pierre gets a number to call back.
+`pirre@fixusconsulting.se` — so Pierre gets a number to call back.
 
 To switch to live calendar booking later, open **`fixus.js`** and set one
 line at the top — every button repoints automatically:
@@ -50,7 +50,7 @@ var BOOKING_URL = '';   // ← paste your Google Calendar appointment-scheduling
 
 ## Contact details (already wired)
 
-- E-post: `Pirrefixus@gmail.com`
+- E-post: `pirre@fixusconsulting.se`
 - Telefon: `+46 76 213 27 81`
 - LinkedIn: <https://www.linkedin.com/in/pierre-nilsson-657017162/>
 

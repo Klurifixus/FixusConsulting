@@ -15,7 +15,7 @@
      knappar om dit automatiskt. Lämna den tom ('') för e-postflödet.
      ============================================================ */
   var BOOKING_URL = '';                                            // ← din Google Calendar-bokningslänk (senare)
-  var BOOKING_FALLBACK = 'mailto:Pirrefixus@gmail.com'
+  var BOOKING_FALLBACK = 'mailto:pirre@fixusconsulting.se'
     + '?subject=' + encodeURIComponent('Intresseanmälan – Fixus Consulting')
     + '&body=' + encodeURIComponent(
         'Hej Pierre!\n\n' +
