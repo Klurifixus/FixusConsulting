@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://klurifixus.github.io/FixusConsulting/sitemap.xml
+Sitemap: https://fixusconsulting.se/sitemap.xml

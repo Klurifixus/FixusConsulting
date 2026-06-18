@@ -2,7 +2,7 @@
 
 One-page marketing site for **Fixus Consulting** — Pierre Nilsson's *operativ konsult- och interimförstärkning*: praktiskt genomförande, tillfällig arbetsledning, verksamhetsanalys och förbättringsarbete, på plats i verksamheten. Baserat i Vårgårda, uppdrag i Västra Götaland.
 
-Built as a static site (HTML + CSS + JS, no build step), published via **GitHub Pages from `main`/root** → https://klurifixus.github.io/FixusConsulting/
+Built as a static site (HTML + CSS + JS, no build step), published via **GitHub Pages from `main`/root** on the custom domain **https://fixusconsulting.se/** (set by the repo-root `CNAME` file; `klurifixus.github.io/FixusConsulting/` now redirects there).
 
 ## Run locally
 
@@ -27,7 +27,7 @@ asset paths behave exactly as in production.
 | `assets/` | `fixus-mark.png` (logo), `pierre.jpg` (portrait), `thrive-and-prosper.jpg` (book cover), `yrken/*.webp` (carousel). |
 | `robots.txt`, `sitemap.xml`, `404.html`, `.nojekyll` | SEO/technical: crawl rules + sitemap, a styled 404 page, and the Jekyll opt-out for GitHub Pages. |
 
-> **Base URL TODO:** canonical, OG/Twitter image, JSON-LD `@id`/url, `robots.txt` and `sitemap.xml` all use the live github.io URL. When the Strato domain `fixusconsulting.se` is pointed at GitHub Pages, add a `CNAME` file and find/replace the base URL (TODO comments mark every spot).
+> **Custom domain:** `fixusconsulting.se` is registered at STRATO; DNS stays at STRATO (so the STRATO mailbox keeps working) with the apex `A` record → `185.199.108.153` and `www` `CNAME` → `klurifixus.github.io`. The repo `CNAME` file sets the GitHub Pages custom domain. Canonical, OG/Twitter image, JSON-LD `@id`/url, `robots.txt` and `sitemap.xml` use `https://fixusconsulting.se/`.
 
 ## Booking flow
 

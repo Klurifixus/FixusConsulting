@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- TODO: byt <loc> till https://fixusconsulting.se/ när domänen pekats om -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://klurifixus.github.io/FixusConsulting/</loc>
+    <loc>https://fixusconsulting.se/</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
