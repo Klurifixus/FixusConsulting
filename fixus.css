@@ -157,7 +157,9 @@ section{position:relative}
 .acard h3{font-family:var(--serif);font-weight:500;font-size:23px;margin:0 0 10px;letter-spacing:-.01em}
 .acard p{margin:0;color:var(--muted);font-size:15.5px;line-height:1.5}
 .acard.wide{grid-column:span 1}
-/* MaxAI-kort (Digitalisering/AI): utgående länkar till mitt AI-bolag */
+/* MaxAI-kort (Digitalisering/AI): separat bolag → grön ton så det avviker lite */
+.acard.maxai{background:linear-gradient(160deg,#e9f4ed 0%,#d7e9dd 100%);border-color:rgba(29,90,71,.22)}
+.acard.maxai::before{width:100%}
 .acard.maxai p strong{color:var(--green);font-weight:700}
 .ac-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin-top:18px}
 .ac-btn{display:inline-flex;align-items:center;gap:8px;background:var(--green);color:#fff;font-weight:600;font-size:14px;padding:10px 16px;border-radius:10px;transition:background .25s,transform .25s var(--ease)}
@@ -306,21 +308,21 @@ section{position:relative}
 
 /* ---------- bok ---------- */
 .book-band{margin-top:60px;display:flex;flex-wrap:wrap;justify-content:center;align-items:stretch;gap:24px}
-.book{display:flex;gap:26px;align-items:center;flex:1 1 440px;max-width:580px;background:rgba(255,255,255,.04);border:1px solid var(--line-d);border-radius:20px;padding:24px 28px;color:inherit;transition:transform .35s var(--ease),border-color .35s,background .35s}
+.book{display:flex;gap:26px;align-items:stretch;flex:1 1 440px;max-width:580px;background:rgba(255,255,255,.04);border:1px solid var(--line-d);border-radius:20px;padding:24px 28px;color:inherit;transition:transform .35s var(--ease),border-color .35s,background .35s}
 .book:hover{transform:translateY(-3px);border-color:rgba(132,200,171,.4);background:rgba(255,255,255,.06)}
-.book-cover{width:118px;height:auto;border-radius:8px;flex:0 0 auto;box-shadow:0 22px 44px -18px rgba(0,0,0,.75)}
+.book-cover{width:118px;height:auto;border-radius:8px;flex:0 0 auto;align-self:center;box-shadow:0 22px 44px -18px rgba(0,0,0,.75)}
 .book-info{display:flex;flex-direction:column;min-width:0}
 .book-k{font-size:11.5px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--mint);margin-bottom:9px}
 .book-title{font-family:var(--serif);font-weight:500;font-size:22px;color:#f3ede1;line-height:1.15;letter-spacing:-.01em;margin-bottom:9px}
 .book-desc{font-size:14.5px;color:#aebeb4;line-height:1.5;margin-bottom:15px}
-.book-cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:var(--mint)}
+.book-cta{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14.5px;color:var(--mint);margin-top:auto}
 .book-cta .ar{transition:transform .3s var(--ease)}
 .book:hover .book-cta .ar{transform:translateX(4px)}
 @media (max-width:560px){.book{flex-direction:column;text-align:center;gap:20px}.book-cta{justify-content:center}.venture-meta{text-align:center}}
 a.book-cta{text-decoration:none}
 a.book-cta:hover{color:#fff}
 /* HazardLink venture-kort: affisch som klickas för att förstoras */
-.venture-cover{position:relative;flex:0 0 auto;width:150px;height:150px;padding:0;border:0;background:none;border-radius:10px;overflow:hidden;cursor:zoom-in;display:block;box-shadow:0 22px 44px -18px rgba(0,0,0,.75)}
+.venture-cover{position:relative;flex:0 0 auto;align-self:center;width:150px;height:150px;padding:0;border:0;background:none;border-radius:10px;overflow:hidden;cursor:zoom-in;display:block;box-shadow:0 22px 44px -18px rgba(0,0,0,.75)}
 .venture-cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s var(--ease)}
 .venture-cover:hover img,.venture-cover:focus-visible img{transform:scale(1.06)}
 .venture-cover:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
