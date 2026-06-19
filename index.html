@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data:; font-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; form-action 'self'" />
 <meta name="referrer" content="strict-origin-when-cross-origin" />
-<title>Operativ konsult och interim arbetsledning | Fixus Consulting</title>
-<meta name="description" content="Fixus hjälper företag med operativ förstärkning, interim arbetsledning, verksamhetsanalys och förbättringsarbete – på plats i verksamheten. Baserat i Vårgårda, uppdrag i Västra Götaland." />
+<title>Operativ konsult och interim förstärkning | Fixus Consulting</title>
+<meta name="description" content="Operativ konsult och interim förstärkning i Vårgårda & Västra Götaland – genomförande, arbetsledning, analys och förbättring på plats i verksamheten." />
 
 <!-- bas-URL: https://fixusconsulting.se/ (Strato-domänen pekar på GitHub Pages) -->
 <link rel="canonical" href="https://fixusconsulting.se/" />
@@ -64,6 +64,7 @@
       "url": "https://fixusconsulting.se/",
       "name": "Fixus Consulting",
       "inLanguage": "sv-SE",
+      "dateModified": "2026-06-19",
       "publisher": { "@id": "https://fixusconsulting.se/#organization" }
     },
     {
@@ -73,7 +74,12 @@
       "jobTitle": "Operativ konsult & verksamhetspartner",
       "worksFor": { "@id": "https://fixusconsulting.se/#organization" },
       "sameAs": ["https://www.linkedin.com/in/pierre-nilsson-657017162/"]
-    }
+    },
+    { "@type": "Service", "name": "Fixus Cover – Tillfällig operativ förstärkning", "serviceType": "Operativ förstärkning", "provider": { "@id": "https://fixusconsulting.se/#organization" }, "areaServed": { "@type": "AdministrativeArea", "name": "Västra Götaland" }, "description": "För när någon saknas, arbetsbelastningen ökar eller verksamheten tillfälligt behöver mer kapacitet. Praktiskt arbete, driftstöd, tillsyn, leverantörskontakter och samordning på plats." },
+    { "@type": "Service", "name": "Fixus Lead – Teamledning och struktur", "serviceType": "Interim arbetsledning", "provider": { "@id": "https://fixusconsulting.se/#organization" }, "areaServed": { "@type": "AdministrativeArea", "name": "Västra Götaland" }, "description": "För team som behöver en tillfällig samordnare, arbetsledare eller operativ ledningsresurs: daglig planering, prioritering, onboarding och koordinering mellan personal och ledning." },
+    { "@type": "Service", "name": "Fixus Insight – Verksamhetsanalys inifrån", "serviceType": "Verksamhetsanalys", "provider": { "@id": "https://fixusconsulting.se/#organization" }, "areaServed": { "@type": "AdministrativeArea", "name": "Västra Götaland" }, "description": "För ledningar som vill förstå vad som fungerar, vad som bromsar och var riskerna finns — sett inifrån genom faktiskt arbete i verksamheten, inte bara via intervjuer. Ger nulägesbild, riskbild och prioriterade nästa steg." },
+    { "@type": "Service", "name": "Fixus Improve – Genomförande av förbättringar", "serviceType": "Förändringsledning", "provider": { "@id": "https://fixusconsulting.se/#organization" }, "areaServed": { "@type": "AdministrativeArea", "name": "Västra Götaland" }, "description": "För verksamheter som vet vad som behöver förändras men saknar tid eller ansvarig person för genomförandet: projekt- och förändringsledning, processförbättring, nya rutiner och uppföljning av effekter." },
+    { "@type": "Service", "name": "Fixus Embedded – Interim verksamhetskapacitet", "serviceType": "Interim verksamhetsledning", "provider": { "@id": "https://fixusconsulting.se/#organization" }, "areaServed": { "@type": "AdministrativeArea", "name": "Västra Götaland" }, "description": "För företag som behöver en person som under en avgränsad period kan ta ett större operativt ansvar: interim arbetsledning, operativ problemlösning, verksamhetsutveckling, ledningsstöd och dokumenterad överlämning." }
   ]
 }
 </script>
@@ -113,7 +119,7 @@
       <a href="#ompierre">Om Pierre</a>
       <a href="#kontakt">Kontakt</a>
     </nav>
-    <span class="nav-cta-wrap"><a class="btn" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka samtal</a></span>
+    <span class="nav-cta-wrap"><a class="btn" href="uppdragsbeskrivning.html" data-booking>Boka samtal</a></span>
     <button type="button" class="nav-toggle" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -124,7 +130,7 @@
   <a href="#branscher">Branscher</a>
   <a href="#ompierre">Om Pierre</a>
   <a href="#kontakt">Kontakt</a>
-  <a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal →</a>
+  <a class="btn btn-solid" href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal →</a>
 </div>
 
 <main id="top">
@@ -143,7 +149,7 @@
         <h1 class="reveal in d1">När verksamheten behöver någon som kan kliva in, förstå läget och <em>få saker gjorda</em></h1>
         <p class="hero-lede reveal in d2">Fixus går in i den dagliga verksamheten, avlastar nyckelpersoner, skapar struktur och driver förbättringar. Från praktiskt genomförande och arbetsledning till verksamhetsanalys och förändringsarbete.</p>
         <div class="hero-ctas reveal in d3">
-          <a class="btn btn-light" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal <span class="ar">→</span></a>
+          <a class="btn btn-light" href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal <span class="ar">→</span></a>
           <a class="btn btn-onlight-ghost" href="#tjanster">Se hur Fixus kan hjälpa</a>
         </div>
         <div class="hero-meta reveal in d4">
@@ -205,7 +211,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Stöd till ordinarie personal</li>
           </ul>
           <p class="pfit"><b>Passar när</b>ni snabbt behöver en erfaren person som kan kliva in och göra jobbet — inte bara vikariera.</p>
-          <a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal <span class="ar">→</span></a>
+          <a class="btn btn-solid" href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal <span class="ar">→</span></a>
         </div>
 
         <div class="pkg">
@@ -224,7 +230,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Förbättring av rutiner och informationsflöden</li>
           </ul>
           <p class="pfit"><b>Passar när</b>ni behöver ledarskap nära golvet, inte ännu en konsult på distans.</p>
-          <a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal <span class="ar">→</span></a>
+          <a class="btn btn-solid" href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal <span class="ar">→</span></a>
         </div>
 
         <div class="pkg">
@@ -243,7 +249,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Prioriterade nästa steg</li>
           </ul>
           <p class="pfit"><b>Passar när</b>ni anar att något bromsar, men inte riktigt var det sitter.</p>
-          <a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal <span class="ar">→</span></a>
+          <a class="btn btn-solid" href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal <span class="ar">→</span></a>
         </div>
 
         <div class="pkg">
@@ -262,7 +268,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Uppföljning av effekter</li>
           </ul>
           <p class="pfit"><b>Passar när</b>ni vet vad ni vill, men ingen internt hinner driva det.</p>
-          <a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal <span class="ar">→</span></a>
+          <a class="btn btn-solid" href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal <span class="ar">→</span></a>
         </div>
 
         <div class="pkg feat">
@@ -281,7 +287,7 @@
             <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Dokumenterad överlämning</li>
           </ul>
           <p class="pfit"><b>Passar när</b>ni behöver mer än en punktinsats och vill ha en person som bär ansvaret med er.</p>
-          <a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal <span class="ar">→</span></a>
+          <a class="btn btn-solid" href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal <span class="ar">→</span></a>
         </div>
 
         <div class="pkg">
@@ -344,7 +350,7 @@
         </div>
       </div>
       <div class="reveal" style="margin-top:44px">
-        <a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal <span class="ar">→</span></a>
+        <a class="btn btn-solid" href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal <span class="ar">→</span></a>
       </div>
     </div>
   </section>
@@ -481,7 +487,7 @@
       <h2>Boka ett <em>förutsättningslöst</em> första samtal.</h2>
       <p>Beskriv läget så reder vi ut behovet tillsammans — kostnadsfritt och utan förpliktelser. Därefter definierar vi mål, omfattning, mandat och rapportering innan något uppdrag börjar.</p>
       <div class="closing-ctas">
-        <a class="btn btn-light" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal <span class="ar">→</span></a>
+        <a class="btn btn-light" href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal <span class="ar">→</span></a>
         <a class="btn btn-onlight-ghost" href="mailto:pirre@fixusconsulting.se">Skicka e-post</a>
       </div>
     </div>
@@ -492,7 +498,7 @@
           <h3>Ta kontakt med Pierre</h3>
           <p class="csub">Kostnadsfritt och förutsättningslöst — vi reder ut behovet tillsammans.</p>
           <div class="contact-rows">
-            <a class="crow2" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">
+            <a class="crow2" href="uppdragsbeskrivning.html" data-booking>
               <span class="ci"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2.5"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
               <span class="cinfo"><span class="ck">Boka ett första samtal</span><span class="cv">Vi bokar in en tid</span></span>
             </a>
@@ -517,7 +523,7 @@
           <div class="cm-divider"></div>
           <div class="cm-stat"><b>Flexibelt</b><span>Kort insats eller löpande närvaro över tid</span></div>
           <div class="cm-divider"></div>
-          <a class="btn btn-light" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener" style="align-self:flex-start">Boka ett första samtal <span class="ar">→</span></a>
+          <a class="btn btn-light" href="uppdragsbeskrivning.html" data-booking style="align-self:flex-start">Boka ett första samtal <span class="ar">→</span></a>
         </div>
       </div>
     </div>
@@ -561,7 +567,7 @@
         </div>
         <div class="footer-col">
           <h4>Kontakt</h4>
-          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal</a>
+          <a href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal</a>
           <a href="mailto:pirre@fixusconsulting.se">pirre@fixusconsulting.se</a>
           <a href="tel:+46762132781">+46 76 213 27 81</a>
           <a href="https://www.linkedin.com/in/pierre-nilsson-657017162/" target="_blank" rel="noopener">LinkedIn →</a>
@@ -585,7 +591,7 @@
 </main>
 
 <!-- sticky mobile CTA -->
-<div class="mobile-cta"><a class="btn btn-solid" href="https://calendar.google.com/calendar/u/0/appointments/schedules/REPLACE_WITH_YOUR_BOOKING_LINK" target="_blank" rel="noopener">Boka ett första samtal <span class="ar">→</span></a></div>
+<div class="mobile-cta"><a class="btn btn-solid" href="uppdragsbeskrivning.html" data-booking>Boka ett första samtal <span class="ar">→</span></a></div>
 
 <script src="fixus.js"></script>
 </body>

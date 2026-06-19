@@ -15,21 +15,17 @@
      knappar om dit automatiskt. Lämna den tom ('') för formulärflödet.
      ============================================================ */
   var BOOKING_URL = '';                                            // ← (valfritt) Google Calendar-bokningslänk
-  var BOOKING_FALLBACK = 'uppdragsbeskrivning.html';               // förifyllnadsformulär – samlar in underlag inför kontakt
 
-  /* Wire every booking CTA to a single destination. The design ships
-     with placeholder hrefs (REPLACE_WITH_YOUR_BOOKING_LINK); this
-     rewrites them all at once. Runs immediately because this script
-     is loaded at the end of <body>, so the DOM is already parsed. */
+  /* Boknings-CTA:erna pekar redan i HTML:en på uppdragsbeskrivning.html
+     (alltid giltig länk, ingen placeholder i rå-HTML). Om BOOKING_URL sätts
+     till en riktig kalenderlänk pekas varje [data-booking]-knapp om dit i
+     stället. Körs direkt — skriptet ligger sist i <body>. */
   (function wireBooking(){
-    var useUrl = BOOKING_URL && BOOKING_URL.indexOf('REPLACE_WITH') === -1;
-    var dest = useUrl ? BOOKING_URL : BOOKING_FALLBACK;
-    var external = /^https?:/i.test(dest);
-    var links = document.querySelectorAll('a[href*="REPLACE_WITH_YOUR_BOOKING_LINK"]');
+    if(!BOOKING_URL || BOOKING_URL.indexOf('REPLACE_WITH') !== -1) return;  // behåll formulär-länkarna
+    var links = document.querySelectorAll('a[data-booking]');
     Array.prototype.forEach.call(links, function(a){
-      a.setAttribute('href', dest);
-      if(external){ a.setAttribute('target','_blank'); a.setAttribute('rel','noopener'); }
-      else { a.removeAttribute('target'); a.removeAttribute('rel'); }
+      a.setAttribute('href', BOOKING_URL);
+      if(/^https?:/i.test(BOOKING_URL)){ a.setAttribute('target','_blank'); a.setAttribute('rel','noopener'); }
     });
   })();
 
