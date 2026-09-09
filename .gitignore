@@ -13,3 +13,6 @@ node_modules/
 
 # Original full-size source photos (web versions live in assets/yrken/)
 _src-images/
+
+# Playwright MCP output (screenshots/logs from local checks)
+.playwright-mcp/

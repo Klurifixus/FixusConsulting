@@ -48,11 +48,17 @@
         <div class="ub-field full"><label for="typ">Vilken typ av hjälp?</label>
           <select id="typ" name="typ">
             <option value="Vet inte än / osäker">Vet inte än / osäker</option>
-            <option value="Tillfällig operativ förstärkning (Fixus Cover)">Tillfällig operativ förstärkning (Cover)</option>
-            <option value="Teamledning och struktur (Fixus Lead)">Teamledning och struktur (Lead)</option>
-            <option value="Verksamhetsanalys inifrån (Fixus Insight)">Verksamhetsanalys inifrån (Insight)</option>
-            <option value="Genomförande av förbättringar (Fixus Improve)">Genomförande av förbättringar (Improve)</option>
-            <option value="Interim verksamhetskapacitet (Fixus Embedded)">Interim verksamhetskapacitet (Embedded)</option>
+            <optgroup label="Någon saknas eller räcker inte till">
+              <option value="Någon saknas – en person som gör jobbet (Fixus Cover)">En person som gör jobbet (Fixus Cover)</option>
+              <option value="Någon saknas – en person som leder teamet (Fixus Lead)">En person som leder teamet (Fixus Lead)</option>
+              <option value="Någon saknas – en person som bär ett större ansvar en period (Fixus Embedded)">En person som bär ett större ansvar en period (Fixus Embedded)</option>
+            </optgroup>
+            <optgroup label="Något ska drivas i mål">
+              <option value="Något ska drivas i mål – genomförande av en förbättring (Fixus Improve)">Genomförande av en förbättring (Fixus Improve)</option>
+            </optgroup>
+            <optgroup label="Något bromsar, men vi vet inte var">
+              <option value="Något bromsar – verksamhetsanalys inifrån (Fixus Insight)">Verksamhetsanalys inifrån (Fixus Insight)</option>
+            </optgroup>
           </select>
         </div>
         <div class="ub-field full"><label for="nulage">Nuläge — vad är situationen?</label><textarea id="nulage" name="nulage"></textarea></div>
@@ -66,7 +72,7 @@
         <button type="submit" class="btn btn-solid">Skicka till Pierre <span class="ar">→</span></button>
         <button type="button" class="btn btn-ghost" id="ubCopy">Kopiera sammanfattning</button>
       </div>
-      <p class="ub-note" id="ubMsg">Fält märkta med <span class="req">*</span> behövs. Inget skickas automatiskt — knappen öppnar ditt mejlprogram så att du ser och bekräftar innan du skickar.</p>
+      <p class="ub-note" id="ubMsg" role="status" aria-live="polite">Fält märkta med <span class="req">*</span> behövs. Inget skickas automatiskt — knappen öppnar ditt mejlprogram så att du ser och bekräftar innan du skickar.</p>
     </form>
   </div>
 </main>
@@ -108,7 +114,7 @@
     if(!valid()){ msg.textContent = 'Fyll i minst namn och en giltig e-postadress.'; msg.style.color = 'var(--brass)'; return; }
     var subj = 'Uppdragsbeskrivning – ' + (val('foretag') || val('namn'));
     window.location.href = 'mailto:pirre@fixusconsulting.se?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(buildBody());
-    msg.textContent = 'Ditt mejlprogram öppnas nu — kontrollera och skicka. Öppnas inget? Använd "Kopiera sammanfattning" och mejla pirre@fixusconsulting.se.';
+    msg.textContent = 'Ditt mejlprogram öppnas nu — läs igenom och skicka. Öppnas inget? Använd "Kopiera sammanfattning" och mejla pirre@fixusconsulting.se.';
     msg.style.color = 'var(--muted)';
   });
   document.getElementById('ubCopy').addEventListener('click', function(){

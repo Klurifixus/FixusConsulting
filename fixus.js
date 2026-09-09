@@ -179,10 +179,12 @@
   /* --- mobile menu --- */
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.querySelector('.mobile-menu');
-  function closeMenu(){ if(toggle){toggle.classList.remove('open');} if(menu){menu.classList.remove('open');} document.body.style.overflow=''; }
+  function closeMenu(){ if(toggle){toggle.classList.remove('open'); toggle.setAttribute('aria-expanded','false'); toggle.setAttribute('aria-label','Öppna meny');} if(menu){menu.classList.remove('open');} document.body.style.overflow=''; }
   if(toggle && menu){
     toggle.addEventListener('click', function(){
       var open = toggle.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Stäng meny' : 'Öppna meny');
       menu.classList.toggle('open', open);
       document.body.style.overflow = open ? 'hidden' : '';
     });
@@ -199,10 +201,11 @@
     function cUpdate(){
       var max = ctrack.scrollWidth - ctrack.clientWidth - 1;
       var x = ctrack.scrollLeft;
-      if(cPrev) cPrev.disabled = x <= 0;
-      if(cNext) cNext.disabled = x >= max;
-      carousel.classList.toggle('at-start', x <= 0);
-      carousel.classList.toggle('at-end', x >= max);
+      var atStart = x <= 1, atEnd = x >= max;   // tolerant: scroll-snap can rest at 1px
+      if(cPrev) cPrev.disabled = atStart;
+      if(cNext) cNext.disabled = atEnd;
+      carousel.classList.toggle('at-start', atStart);
+      carousel.classList.toggle('at-end', atEnd);
     }
     function page(dir){ ctrack.scrollBy({ left: dir * ctrack.clientWidth * 0.85, behavior: 'smooth' }); }
     if(cPrev) cPrev.addEventListener('click', function(){ page(-1); });
