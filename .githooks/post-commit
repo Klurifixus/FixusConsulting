@@ -1,0 +1,23 @@
+#!/bin/sh
+# post-commit (spårad, core.hooksPath=.githooks):
+# 1) lägger en rad längst ner i utvecklingsloggen:
+#      - [commit] <kort hash> <branch> <rubrik>
+# 2) kedjar vidare till .git/hooks/post-commit om en sådan finns.
+#
+# Loggfilen blir ändrad av raden och följer med i nästa commit; det är avsett
+# (CLAUDE.md, "Sessionslogg (obligatoriskt)").
+LOGG="docs/logg/UTVECKLINGSLOGG.md"
+GIT_DIR=${GIT_DIR:-$(git rev-parse --git-dir 2>/dev/null)}
+
+# Under rebase och cherry-pick spelas commits upp på nytt med nya hashar;
+# de raderna vore brus, så de loggas inte.
+if [ ! -d "$GIT_DIR/rebase-merge" ] && [ ! -d "$GIT_DIR/rebase-apply" ] \
+   && [ ! -f "$GIT_DIR/CHERRY_PICK_HEAD" ]; then
+  hash=$(git rev-parse --short HEAD 2>/dev/null)
+  branch=$(git symbolic-ref --short -q HEAD 2>/dev/null || echo '(detached)')
+  rubrik=$(git log -1 --format=%s 2>/dev/null)
+  mkdir -p "$(dirname "$LOGG")"
+  printf -- '- [commit] %s %s %s\n' "$hash" "$branch" "$rubrik" >> "$LOGG"
+fi
+
+exec sh "$(dirname "$0")/kedja-lokal-hook.sh" post-commit "$@"

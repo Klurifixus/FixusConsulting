@@ -1,0 +1,6 @@
+# Spårade git-hookar och loggskriptet körs av sh: håll dem LF även på Windows (2026-09-30)
+.githooks/* text eol=lf
+scripts/*.sh text eol=lf
+# Utvecklingsloggen är bara-lägg-till: LF så hookens rader matchar filen,
+# och vid merge behålls båda sidors rader
+docs/logg/UTVECKLINGSLOGG.md text eol=lf merge=union

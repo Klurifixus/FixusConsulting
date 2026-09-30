@@ -1,0 +1,12 @@
+#!/bin/sh
+# pre-commit (spårad, core.hooksPath=.githooks):
+# 1) utvecklingsloggen får aldrig raderas ur repot (CLAUDE.md, "Sessionslogg"),
+# 2) kedjar vidare till .git/hooks/pre-commit om en sådan finns.
+LOGG="docs/logg/UTVECKLINGSLOGG.md"
+
+if git diff --cached --name-only --diff-filter=D -- "$LOGG" 2>/dev/null | grep -q .; then
+  echo "pre-commit: $LOGG får aldrig raderas (CLAUDE.md, Sessionslogg). Commiten stoppad." >&2
+  exit 1
+fi
+
+exec sh "$(dirname "$0")/kedja-lokal-hook.sh" pre-commit "$@"
