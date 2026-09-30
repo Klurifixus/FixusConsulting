@@ -15,6 +15,8 @@ finns lokalt och inte är pushat (Pierre-beslut 2026-09-30).
   `docs/logg/UTVECKLINGSLOGG.md` enligt mallen i filens huvud. Kort och
   sakligt, max 8 rader: vad som gjordes, vilka beslut som togs, vad som är
   öppet och git-läget. Git-läget tar du fram med `sh scripts/logg-status.sh`.
+  Skriv posten via `sh scripts/logg-post.sh` (posten på stdin; rubriken med
+  tid sätts automatiskt), så går den även vidare till Slack.
 - **Bara-lägg-till:** nya poster längst ner, äldre poster ändras aldrig.
 - **Aldrig i loggen:** nycklar, lösenord, tokens, personnummer eller kunddata.
 - **Commit:** loggfilen committas tillsammans med arbetet när det committas.
@@ -26,3 +28,7 @@ finns lokalt och inte är pushat (Pierre-beslut 2026-09-30).
   vid Stop), vilket lägger en automatisk ögonblicksbild när git-läget ändrats.
   Hookarna i `.githooks/` kräver `git config core.hooksPath .githooks` en gång
   per klon.
+- **Slack:** finns `FIXUS_LOG_WEBHOOK` i `.env.local` (git-ignorerad) skickar
+  `scripts/logg-slack.sh` varje ny loggpost dit (5 s timeout, ett fel stoppar
+  aldrig hooken). Adressen får aldrig committas, skrivas ut eller hamna i
+  loggen.

@@ -16,3 +16,8 @@ _src-images/
 
 # Playwright MCP output (screenshots/logs from local checks)
 .playwright-mcp/
+
+# Lokala hemligheter (t.ex. FIXUS_LOG_WEBHOOK för Slack-loggen): aldrig committade
+.env
+.env.local
+.env.*.local

@@ -16,8 +16,11 @@ if [ ! -d "$GIT_DIR/rebase-merge" ] && [ ! -d "$GIT_DIR/rebase-apply" ] \
   hash=$(git rev-parse --short HEAD 2>/dev/null)
   branch=$(git symbolic-ref --short -q HEAD 2>/dev/null || echo '(detached)')
   rubrik=$(git log -1 --format=%s 2>/dev/null)
+  rad="- [commit] $hash $branch $rubrik"
   mkdir -p "$(dirname "$LOGG")"
-  printf -- '- [commit] %s %s %s\n' "$hash" "$branch" "$rubrik" >> "$LOGG"
+  printf '%s\n' "$rad" >> "$LOGG"
+  # Vidare till Slack om FIXUS_LOG_WEBHOOK finns; ett fel stoppar aldrig hooken.
+  printf '%s\n' "$rad" | sh scripts/logg-slack.sh || true
 fi
 
 exec sh "$(dirname "$0")/kedja-lokal-hook.sh" post-commit "$@"

@@ -91,13 +91,16 @@ case "${1:-}" in
     if [ "$fp" = "$(cat "$fp_fil" 2>/dev/null)" ]; then
       exit 0
     fi
-    mkdir -p "$(dirname "$LOGG")"
-    {
-      printf '\n## %s – automatisk ögonblicksbild\n\n```\n' "$(date '+%Y-%m-%d %H:%M')"
+    block=$(
+      printf '## %s – automatisk ögonblicksbild\n\n```\n' "$(date '+%Y-%m-%d %H:%M')"
       snapshot
-      printf '```\n'
-    } >> "$LOGG"
+      printf '```'
+    )
+    mkdir -p "$(dirname "$LOGG")"
+    printf '\n%s\n' "$block" >> "$LOGG"
     printf '%s\n' "$fp" > "$fp_fil"
+    # Vidare till Slack om FIXUS_LOG_WEBHOOK finns; ett fel stoppar aldrig hooken.
+    printf '%s\n' "$block" | sh scripts/logg-slack.sh || true
     ;;
   *)
     echo "Användning: sh scripts/logg-status.sh [--snapshot]" >&2
